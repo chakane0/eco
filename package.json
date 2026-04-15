@@ -1,0 +1,25 @@
+{
+  "name": "eco",
+  "version": "1.0.0",
+  "description": "Prediction Pulse is a web application that fetches live prediction market data from Kalshi's public REST API, categorizes markets by topic (economy, politics, energy, climate), and uses OpenAI's GPT-4o-mini to translate raw contract prices into plain-English insights with actionable context. The target audience is small business owners, freelancers, and financially-aware individuals who want to make better decisions about things like refinancing, spending, hiring, and major purchases — not traders or quants.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch sec/index.ts",
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chakane0/eco.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chakane0/eco/issues"
+  },
+  "homepage": "https://github.com/chakane0/eco#readme",
+  "workspaces": ["server", "client"]
+}
