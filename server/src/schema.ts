@@ -10,7 +10,7 @@ const CREATE_TABLES = `
         id SERIAL PRIMARY KEY,
         kalshi_id VARCHAR(255) UNIQUE NOT NULL,
         title VARCHAR(500) NOT NULL,
-        category VARCHAR(50) NOT NULL CHECK (catrgory IN ('economy', 'politics', 'energy', 'climate')),
+        category VARCHAR(50) NOT NULL CHECK (category IN ('economy', 'politics', 'energy', 'climate')),
         current_price NUMERIC(5, 4) NOT NULL CHECK (current_price >= 0 AND current_price <= 1),
         previous_price NUMERIC(5, 4) NOT NULL CHECK (previous_price >= 0 AND previous_price <= 1),
         volume INTEGER NOT NULL DEFAULT 0 CHECK (volume >= 0),
@@ -28,7 +28,7 @@ const CREATE_TABLES = `
         id SERIAL PRIMARY KEY,
         email VARCHAR(255) UNIQUE NOT NULL,
         subscribed_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-        activate BOOLEAN NOT NULL DEFAULT TRUE
+        active BOOLEAN NOT NULL DEFAULT TRUE
     );
 `
 

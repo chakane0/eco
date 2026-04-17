@@ -1,0 +1,41 @@
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #fff;
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.probability {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.trend {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trendUp { color: #22c55e; }
+.trendDown { color: #ef4444; }
+.trendStable { color: #6b7280; }
+
+.insight {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+}

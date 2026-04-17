@@ -1,0 +1,49 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.tabActive {
+  background-color: #1f2937;
+  color: #fff;
+}
+
+.message {
+  text-align: center;
+  color: #6b7280;
+  padding: 40px 0;
+}
+
+.error {
+  text-align: center;
+  color: #ef4444;
+  padding: 40px 0;
+}

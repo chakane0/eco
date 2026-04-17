@@ -6,7 +6,6 @@
 import { query } from './db.js';
 import { categorizeMarket } from './categorize.js';
 import { MarketSnapshotSchema, type MarketSnapshot, type MarketCategory } from './types.js';
-import { string } from 'zod';
 
 const KALSHI_API_BASE = 'https://api.elections.kalshi.com/trade-api/v2';
 
@@ -26,6 +25,8 @@ interface KalshiResponse {
 async function fetchAllActiveMarkets(): Promise<KalshiMarket[]> {
     const allMarkets: KalshiMarket[] =[];
     let cursor = '';
+    let pages = 0;
+    const MAX_PAGES = 5;
 
     do {
         const url = new URL(`${KALSHI_API_BASE}/markets`);
@@ -42,9 +43,14 @@ async function fetchAllActiveMarkets(): Promise<KalshiMarket[]> {
         const data = (await response.json()) as KalshiResponse
         allMarkets.push(...data.markets);
         cursor = data.cursor;
-    } while(cursor) {
-        return allMarkets;
-    }
+        if(cursor) await delay(200);
+        console.log(`Fetched ${allMarkets.length} markets so far...`)
+        cursor = data.cursor;
+        pages++;
+        if(cursor && pages < MAX_PAGES) await delay(200);
+
+    } while(cursor && pages < MAX_PAGES) 
+    return allMarkets;
 };
 
 async function upsertMarket(
@@ -73,7 +79,7 @@ async function upsertMarket(
     } else {
         await query (
             `INSERT INTO markets (kalshi_id, title, category, current_price, previous_price, volume, last_updated)
-            VALUES ($1, $2, $3, $4, $5, NOW())`,
+ VALUES ($1, $2, $3, $4, $4, $5, NOW())`,
             [kalshiId, title, category, price, volume]
         )
     }
@@ -84,6 +90,7 @@ export async function fetchAndSyncMarkets(): Promise<MarketSnapshot[]> {
     const snapshots: MarketSnapshot[] = [];
 
     for(const market of kalshiMarkets) {
+        
         const category = categorizeMarket(market.title);
         if(!category) continue;
 
@@ -98,7 +105,7 @@ export async function fetchAndSyncMarkets(): Promise<MarketSnapshot[]> {
 
         try {
             await upsertMarket(market.ticker, title, category, price, volume);
-
+            
             const row = await query<{
                 kalshi_id: string
                 title: string
@@ -131,4 +138,8 @@ export async function fetchAndSyncMarkets(): Promise<MarketSnapshot[]> {
     }
     console.log(`Synced ${snapshots.length} markets`);
     return snapshots;
+}
+
+function delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
