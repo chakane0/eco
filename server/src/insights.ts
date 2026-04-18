@@ -61,7 +61,7 @@ export async function generateInsight(market: MarketSnapshot): Promise<Insight> 
     return insight;
 }
 
-export async function generateTopMarketInsights(limit: number = 20): Promise<Insight[]> {
+export async function generateTopMarketInsights(limit: number = 25): Promise<Insight[]> {
     const result = await query<{
         kalshi_id: string,
         title: string

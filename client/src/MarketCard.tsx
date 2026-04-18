@@ -4,7 +4,7 @@
 */
 
 import type { MarketWithInsight } from './api';
-import styles from './MarketCard.module.css';
+import styles from '../src/Styles/MarketCard.module.css';
 
 interface Props {
     market: MarketWithInsight
@@ -18,9 +18,12 @@ export function MarketCard({market}: Props) {
     return (
         <div className={styles.card}>
             <h3 className={styles.title}>
+                market title
                 {market.title}
             </h3>
+            stats
             <div className={styles.stats}>
+                probability
                 <span className={styles.stats}>{probability}</span>
                 <span className={`${styles.trend} ${trendClass}`}>{arrow} {Math.abs(market.trendPercent).toFixed(1)}%</span>
             </div>

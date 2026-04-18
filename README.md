@@ -866,15 +866,34 @@ Key properties to test with generated data:
 
 ## Dependencies
 
-| Dependency | Purpose | Version Strategy |
-|---|---|---|
-| React | Frontend UI framework | Latest stable (18.x) |
-| TypeScript | Type safety across frontend and backend | Latest stable (5.x) |
-| Express | Backend HTTP server | Latest stable (4.x) |
-| node-cron | Scheduler for market fetching and digest | Latest stable |
-| openai | Official OpenAI Node.js SDK | Latest stable |
-| pg (node-postgres) | PostgreSQL client | Latest stable |
-| resend or @sendgrid/mail | Email delivery | Latest stable |
-| fast-check | Property-based testing | Latest stable |
-| vitest | Test runner | Latest stable |
-| zod | Runtime validation for API inputs and Kalshi responses | Latest stable |
+| Dependency               | Purpose                                                | Version Strategy     |
+| --------------------------| --------------------------------------------------------| ----------------------|
+| React                    | Frontend UI framework                                  | Latest stable (18.x) |
+| TypeScript               | Type safety across frontend and backend                | Latest stable (5.x)  |
+| Express                  | Backend HTTP server                                    | Latest stable (4.x)  |
+| node-cron                | Scheduler for market fetching and digest               | Latest stable        |
+| openai                   | Official OpenAI Node.js SDK                            | Latest stable        |
+| pg (node-postgres)       | PostgreSQL client                                      | Latest stable        |
+| resend or @sendgrid/mail | Email delivery                                         | Latest stable        |
+| fast-check               | Property-based testing                                 | Latest stable        |
+| vitest                   | Test runner                                            | Latest stable        |
+| zod                      | Runtime validation for API inputs and Kalshi responses | Latest stable        |
+
+curl -s "https://api.elections.kalshi.com/trade-api/v2/markets?status=open&limit=1000" | python3 -c "
+import json, sys
+data = json.load(sys.stdin)
+kw = {'economy':['fed','rate','gdp','inflation','recession','unemployment','jobs','cpi']}
+matched = []
+for m in data.get('markets',[]):
+  t = m.get('title','').lower()
+  for cat,words in kw.items():
+    if any(w in t for w in words):
+      matched.append(m)
+      print(f'[{cat}] {m[\"title\"]}')
+      break
+  if len(matched) >= 25: break
+with open('server/testData/kalshiTestData.json','w') as f:
+  json.dump({'markets':matched},f,indent=2)
+print(f'\nSaved {len(matched)} markets')
+"
+

@@ -10,9 +10,9 @@ import { router } from './routes.js';
 import { createTables } from './schema.js';
 
 import cron from 'node-cron';
-import { fetchAndSyncMarkets } from './fetcher.js';
+import { fetchAndSyncMarkets } from './fetchKalshi.js';
 import { generateTopMarketInsights } from './insights.js';
-import { buildAndSendDigest } from './digest.js';
+import { buildAndSendDigest } from './emailJob.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;

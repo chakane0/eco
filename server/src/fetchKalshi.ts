@@ -4,8 +4,8 @@
 */
 
 import { query } from './db.js';
-import { categorizeMarket } from './categorize.js';
-import { MarketSnapshotSchema, type MarketSnapshot, type MarketCategory } from './types.js';
+import { mapKalshiCategory } from './categorizeKalshi.js';
+import {type MarketSnapshot, type MarketCategory } from './types.js';
 
 const KALSHI_API_BASE = 'https://api.elections.kalshi.com/trade-api/v2';
 
@@ -26,7 +26,7 @@ async function fetchAllActiveMarkets(): Promise<KalshiMarket[]> {
     const allMarkets: KalshiMarket[] =[];
     let cursor = '';
     let pages = 0;
-    const MAX_PAGES = 5;
+    const MAX_PAGES = 20;
 
     do {
         const url = new URL(`${KALSHI_API_BASE}/markets`);
@@ -45,6 +45,7 @@ async function fetchAllActiveMarkets(): Promise<KalshiMarket[]> {
         cursor = data.cursor;
         if(cursor) await delay(200);
         console.log(`Fetched ${allMarkets.length} markets so far...`)
+        console.log(allMarkets);
         cursor = data.cursor;
         pages++;
         if(cursor && pages < MAX_PAGES) await delay(200);
@@ -91,7 +92,7 @@ export async function fetchAndSyncMarkets(): Promise<MarketSnapshot[]> {
 
     for(const market of kalshiMarkets) {
         
-        const category = categorizeMarket(market.title);
+        const category = mapKalshiCategory(market.title);
         if(!category) continue;
 
         const price = Math.max(0, Math.min(1, market.yes_bid ?? 0));

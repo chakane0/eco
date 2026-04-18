@@ -1,9 +1,9 @@
 // ABOUTME: Email signup form for the weekly market digest.
 // ABOUTME: Validates email client-side and submits to the subscriber API.
 
-import { useState } from 'react'
-import { subscribe } from './api'
-import styles from './EmailSignup.module.css'
+import { useState } from 'react';
+import { subscribe } from './api';
+import styles from '../src/Styles/EmailSignup.module.css';
 
 export function EmailSignup() {
   const [email, setEmail] = useState('')
