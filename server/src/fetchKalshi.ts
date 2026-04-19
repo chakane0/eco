@@ -1,146 +1,195 @@
-/*
-    Fetches active markets from Kalshi's public API and syncs them to the database
-    Handles price rotation, categorization, validation, and pagincation
-*/
+// ABOUTME: Fetches active events and markets from Kalshi's public API.
+// ABOUTME: Stores events with total volume and markets as children, using Kalshi's category system.
 
-import { query } from './db.js';
-import { mapKalshiCategory } from './categorizeKalshi.js';
-import {type MarketSnapshot, type MarketCategory } from './types.js';
+import { query } from './db.js'
+import { mapKalshiCategory } from './categorizeKalshi.js'
+import type { MarketCategory, KalshiEvent } from './types.js'
 
-const KALSHI_API_BASE = 'https://api.elections.kalshi.com/trade-api/v2';
+const KALSHI_API_BASE = 'https://api.elections.kalshi.com/trade-api/v2'
+const MAX_EVENT_PAGES = 5
 
-interface KalshiMarket {
-    ticker: string
-    title: string
-    yes_bid: number
-    volume: number
-    status: string
-};
+interface KalshiApiEvent {
+  event_ticker: string
+  category: string
+  title: string
+  mutually_exclusive: boolean
+}
 
-interface KalshiResponse {
-    markets: KalshiMarket[]
-    cursor: string
-};
+interface KalshiApiMarket {
+  ticker: string
+  title: string
+  yes_bid_dollars: string
+  volume_fp: string
+  previous_price_dollars: string
+  status: string
+}
 
-async function fetchAllActiveMarkets(): Promise<KalshiMarket[]> {
-    const allMarkets: KalshiMarket[] =[];
-    let cursor = '';
-    let pages = 0;
-    const MAX_PAGES = 20;
+interface KalshiEventsResponse {
+  events: KalshiApiEvent[]
+  cursor: string
+}
 
-    do {
-        const url = new URL(`${KALSHI_API_BASE}/markets`);
-        url.searchParams.set('status', 'open');
-        url.searchParams.set('limit', '1000');
-        if(cursor) url.searchParams.set('cursor', cursor);
-
-        const response = await fetch(url.toString());
-
-        if(!response.ok) {
-            throw new Error(`Kalshi API returned ${response.status}: ${response.statusText}`);
-        }
-
-        const data = (await response.json()) as KalshiResponse
-        allMarkets.push(...data.markets);
-        cursor = data.cursor;
-        if(cursor) await delay(200);
-        console.log(`Fetched ${allMarkets.length} markets so far...`)
-        console.log(allMarkets);
-        cursor = data.cursor;
-        pages++;
-        if(cursor && pages < MAX_PAGES) await delay(200);
-
-    } while(cursor && pages < MAX_PAGES) 
-    return allMarkets;
-};
-
-async function upsertMarket(
-    kalshiId: string,
-    title: string,
-    category: MarketCategory,
-    price: number,
-    volume: number,
-): Promise<void> {
-    const existing = await query<{ current_price: number }>(
-        'SELECT current_price FROM markets WHERE kalshi_id = $1',
-        [kalshiId]
-    );
-
-    if(existing.rows.length > 0) {
-        await query(
-            `UPDATE markets SET previous_price = current_price,
-                current_price = $1,
-                volume = $2,
-                title = $3,
-                last_updated = NOW()
-                WHERE kalshi_id = $4
-            `,
-            [price, volume, title, kalshiId]
-        )
-    } else {
-        await query (
-            `INSERT INTO markets (kalshi_id, title, category, current_price, previous_price, volume, last_updated)
- VALUES ($1, $2, $3, $4, $4, $5, NOW())`,
-            [kalshiId, title, category, price, volume]
-        )
-    }
-};
-
-export async function fetchAndSyncMarkets(): Promise<MarketSnapshot[]> {
-    const kalshiMarkets = await fetchAllActiveMarkets();
-    const snapshots: MarketSnapshot[] = [];
-
-    for(const market of kalshiMarkets) {
-        
-        const category = mapKalshiCategory(market.title);
-        if(!category) continue;
-
-        const price = Math.max(0, Math.min(1, market.yes_bid ?? 0));
-        const volume = Math.max(0, Math.floor(market.volume ?? 0));
-        const title = (market.title ?? '').slice(0, 500);
-
-        if(!market.ticker || !title) {
-            console.warn('Skipping malformed market:', JSON.stringify(market));
-            continue;
-        }
-
-        try {
-            await upsertMarket(market.ticker, title, category, price, volume);
-            
-            const row = await query<{
-                kalshi_id: string
-                title: string
-                category: MarketCategory
-                current_price: string
-                previous_price: string
-                volume: number
-                last_updated: Date
-            }>(
-                'SELECT * FROM markets WHERE kalshi_id = $1',
-                [market.ticker]
-            )
-
-            if(row.rows[0]) {
-                const r = row.rows[0]
-                snapshots.push({
-                    kalshiId: r.kalshi_id,
-                    title: r.title,
-                    category: r.category,
-                    currentPrice: parseFloat(r.current_price),
-                    previousPrice: parseFloat(r.previous_price),
-                    volume: r.volume,
-                    lastUpdated: r.last_updated,
-                });
-            }
-        } catch (err) {
-            console.warn(`Skipping market ${market.ticker}:`, err);
-            continue;
-        }
-    }
-    console.log(`Synced ${snapshots.length} markets`);
-    return snapshots;
+interface KalshiMarketsResponse {
+  markets: KalshiApiMarket[]
+  cursor: string
 }
 
 function delay(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function fetchMatchingEvents(): Promise<KalshiApiEvent[]> {
+  const matched: KalshiApiEvent[] = []
+  let cursor = ''
+
+  for (let page = 0; page < MAX_EVENT_PAGES; page++) {
+    const url = new URL(`${KALSHI_API_BASE}/events`)
+    url.searchParams.set('status', 'open')
+    url.searchParams.set('limit', '200')
+    if (cursor) url.searchParams.set('cursor', cursor)
+
+    const response = await fetch(url.toString())
+    if (!response.ok) {
+      throw new Error(`Kalshi events API returned ${response.status}: ${response.statusText}`)
+    }
+
+    const data = (await response.json()) as KalshiEventsResponse
+
+    for (const event of data.events) {
+      const category = mapKalshiCategory(event.category)
+      if (category) {
+        matched.push(event)
+      }
+    }
+
+    console.log(`Fetched events page ${page + 1}, ${matched.length} matching events so far`)
+    cursor = data.cursor
+    if (!cursor) break
+    await delay(300)
+  }
+
+  return matched
+}
+
+async function fetchMarketsForEvent(eventTicker: string): Promise<KalshiApiMarket[]> {
+  const url = new URL(`${KALSHI_API_BASE}/markets`)
+  url.searchParams.set('event_ticker', eventTicker)
+  url.searchParams.set('status', 'open')
+  url.searchParams.set('limit', '50')
+
+  const response = await fetch(url.toString())
+  if (!response.ok) {
+    throw new Error(`Kalshi markets API returned ${response.status}: ${response.statusText}`)
+  }
+
+  const data = (await response.json()) as KalshiMarketsResponse
+  return data.markets
+}
+
+async function upsertEvent(
+  eventTicker: string,
+  title: string,
+  category: MarketCategory,
+  totalVolume: number,
+  isMutuallyExclusive: boolean,
+  marketCount: number
+): Promise<void> {
+  await query(
+    `INSERT INTO events (event_ticker, title, category, total_volume, is_mutually_exclusive, market_count, last_updated)
+     VALUES ($1, $2, $3, $4, $5, $6, NOW())
+     ON CONFLICT (event_ticker) DO UPDATE SET
+       title = $2,
+       total_volume = $4,
+       is_mutually_exclusive = $5,
+       market_count = $6,
+       last_updated = NOW()`,
+    [eventTicker, title, category, totalVolume, isMutuallyExclusive, marketCount]
+  )
+}
+
+async function upsertMarket(
+  kalshiId: string,
+  eventTicker: string,
+  title: string,
+  price: number,
+  volume: number
+): Promise<void> {
+  await query(
+    `INSERT INTO markets (kalshi_id, event_ticker, title, current_price, previous_price, volume, last_updated)
+     VALUES ($1, $2, $3, $4, $4, $5, NOW())
+     ON CONFLICT (kalshi_id) DO UPDATE SET
+       previous_price = markets.current_price,
+       current_price = $4,
+       volume = $5,
+       title = $3,
+       last_updated = NOW()`,
+    [kalshiId, eventTicker, title, price, volume]
+  )
+}
+
+export async function fetchAndSyncMarkets(): Promise<KalshiEvent[]> {
+  const apiEvents = await fetchMatchingEvents()
+  const syncedEvents: KalshiEvent[] = []
+
+  for (const apiEvent of apiEvents) {
+    try {
+      const category = mapKalshiCategory(apiEvent.category)!
+      const markets = await fetchMarketsForEvent(apiEvent.event_ticker)
+
+      // Insert event first (with 0 volume) so markets can reference it
+      await upsertEvent(
+        apiEvent.event_ticker,
+        apiEvent.title,
+        category,
+        0,
+        apiEvent.mutually_exclusive ?? false,
+        markets.length
+      )
+
+      let totalVolume = 0
+
+      for (const market of markets) {
+        const price = Math.max(0, Math.min(1, parseFloat(market.yes_bid_dollars) || 0))
+        const volume = Math.max(0, parseFloat(market.volume_fp) || 0)
+        const title = (market.title ?? '').slice(0, 500)
+
+        if (!market.ticker || !title) continue
+
+        totalVolume += volume
+
+        try {
+          await upsertMarket(market.ticker, apiEvent.event_ticker, title, price, volume)
+        } catch (err) {
+          console.warn(`Skipping market ${market.ticker}:`, err)
+        }
+      }
+
+      // Update event with real total volume
+      await upsertEvent(
+        apiEvent.event_ticker,
+        apiEvent.title,
+        category,
+        totalVolume,
+        apiEvent.mutually_exclusive ?? false,
+        markets.length
+      )
+
+      syncedEvents.push({
+        eventTicker: apiEvent.event_ticker,
+        title: apiEvent.title,
+        category,
+        totalVolume,
+        isMutuallyExclusive: apiEvent.mutually_exclusive ?? false,
+        marketCount: markets.length,
+        lastUpdated: new Date(),
+      })
+
+      await delay(200)
+    } catch (err) {
+      console.warn(`Skipping event ${apiEvent.event_ticker}:`, err)
+    }
+  }
+
+  console.log(`Synced ${syncedEvents.length} events`)
+  return syncedEvents
 }

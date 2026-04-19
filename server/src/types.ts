@@ -13,21 +13,32 @@ export type MarketCategory = z.infer<typeof MarketCategorySchema>
 export const TrendDirectionSchema = z.enum(['up', 'down', 'stable']);
 export type TrendDirection = z.infer<typeof TrendDirectionSchema>;
 
-// Market Snapshot
+// Event (parent grouping of markets)
+export interface KalshiEvent {
+    eventTicker: string
+    title: string
+    category: MarketCategory
+    totalVolume: number
+    isMutuallyExclusive: boolean
+    marketCount: number
+    lastUpdated: Date
+}
+
+// Market Snapshot (child of an event)
 export const MarketSnapshotSchema = z.object({
     kalshiId: z.string().min(1),
+    eventTicker: z.string().min(1),
     title: z.string().min(1).max(500),
-    category: MarketCategorySchema,
     currentPrice: z.number().min(0).max(1),
     previousPrice: z.number().min(0).max(1),
-    volume: z.int().min(0),
+    volume: z.number().min(0),
     lastUpdated: z.date(),
 });
 export type MarketSnapshot = z.infer<typeof MarketSnapshotSchema>;
 
-// Insight
+// Insight (per event, not per market)
 export const InsightSchema = z.object({
-    marketId: z.string().min(1),
+    eventTicker: z.string().min(1),
     text: z.string().min(1),
     generatedAt: z.date(),
 });
@@ -41,19 +52,17 @@ export const SubscriberSchema = z.object({
 });
 export type Subscriber = z.infer<typeof SubscriberSchema>;
 
-// Market with Insight (api response shape)
-export const MarketWithInsightSchema = z.object({
-    kalshiId: z.string().min(1),
-    title: z.string().min(1).max(500),
-    category: MarketCategorySchema,
-    currentPrice: z.number().min(0).max(1),
-    previousPrice: z.number().min(0).max(1),
-    trend: TrendDirectionSchema,
-    trendPercent: z.number(),
-    lastUpdated: z.string(),
-    insight: z.string().nullable()
-});
-export type MarketWithInsight = z.infer<typeof MarketWithInsightSchema>;
+// Event with Insight (API response shape)
+export interface EventWithInsight {
+    eventTicker: string
+    title: string
+    category: MarketCategory
+    totalVolume: number
+    isMutuallyExclusive: boolean
+    marketCount: number
+    lastUpdated: string
+    insight: string | null
+}
 
 // Send result (digest delivery)
 export const SendResultSchema = z.object({
