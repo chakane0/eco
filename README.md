@@ -34,158 +34,6 @@ A web app that pulls live prediction market data from Kalshi's API, categorizes 
   → Send to active subscribers via email service
 ```
 
-## Data Model
-
-### Events (parent)
-
-```sql
-events (
-  event_ticker  VARCHAR(255) UNIQUE NOT NULL,  -- "KXFEDRATE-26JUN"
-  title         VARCHAR(500) NOT NULL,          -- "Will the Fed cut rates?"
-  category      VARCHAR(50) NOT NULL,           -- economics | politics | climate | financials
-  total_volume  NUMERIC DEFAULT 0,              -- sum of all child market volumes
-  is_mutually_exclusive BOOLEAN DEFAULT FALSE,  -- true = pick one outcome, false = threshold-based
-  market_count  INTEGER DEFAULT 0,
-  last_updated  TIMESTAMPTZ
-)
-```
-
-### Markets (children of events)
-
-```sql
-markets (
-  kalshi_id     VARCHAR(255) UNIQUE NOT NULL,  -- "KXFEDRATE-26JUN-T450"
-  event_ticker  VARCHAR(255) REFERENCES events, -- FK to parent event
-  title         VARCHAR(500) NOT NULL,          -- specific contract question
-  current_price NUMERIC(5,4),                   -- 0.73 = 73% probability
-  previous_price NUMERIC(5,4),                  -- for trend calculation
-  volume        NUMERIC DEFAULT 0,
-  last_updated  TIMESTAMPTZ
-)
-```
-
-### Insights (per event)
-
-```sql
-insights (
-  event_ticker  VARCHAR(255) UNIQUE REFERENCES events,
-  text          TEXT NOT NULL,                   -- AI-generated, max 60 words
-  generated_at  TIMESTAMPTZ
-)
-```
-
-### Subscribers
-
-```sql
-subscribers (
-  email         VARCHAR(255) UNIQUE NOT NULL,
-  subscribed_at TIMESTAMPTZ,
-  active        BOOLEAN DEFAULT TRUE             -- soft delete
-)
-```
-
-## Event Types
-
-**Mutually Exclusive** (is_mutually_exclusive = true):
-- Only one outcome can happen
-- Example: "Who will be the next Pope?" → Cardinal A OR Cardinal B
-- Child market probabilities roughly sum to 100%
-
-**Non-Mutually Exclusive** (is_mutually_exclusive = false):
-- Multiple outcomes can be true simultaneously
-- Example: "How high will unemployment get?" → thresholds at 5%, 9%, 12%
-- If unemployment hits 12%, the 5% and 9% markets also resolve yes
-
-## Categorization
-
-Uses Kalshi's own category field from the events API. No keyword matching.
-
-| Kalshi Category | Our Category |
-|---|---|
-| Economics | economics |
-| Financials | financials |
-| Companies | financials |
-| Politics | politics |
-| Elections | politics |
-| Climate and Weather | climate |
-
-All other Kalshi categories (Sports, Entertainment, etc.) are excluded.
-
-## Tech Stack
-
-| Layer | Choice |
-|---|---|
-| Frontend | React + TypeScript (Vite) |
-| Backend | Node.js + Express |
-| Data Source | Kalshi public REST API |
-| AI | OpenAI API (GPT-4o-mini) |
-| Email | Resend or SendGrid |
-| Database | PostgreSQL |
-| Scheduler | node-cron |
-
-## Project Structure
-
-```
-server/
-  src/
-    index.ts            -- Express entry point, cron schedulers, middleware
-    db.ts               -- PostgreSQL connection pool
-    schema.ts           -- Table creation
-    types.ts            -- Shared TypeScript types
-    categorizeKalshi.ts -- Kalshi category → internal category mapping
-    fetchKalshi.ts      -- Fetches events + markets from Kalshi API
-    insights.ts         -- OpenAI insight generation
-    emailJob.ts         -- Weekly digest builder + sender
-    routes.ts           -- Express API routes
-    ranking.ts          -- Top event selection by volume
-    trend.ts            -- Trend direction calculation
-  testData/
-    kalshiTestData.ts   -- Script to fetch real Kalshi data for analysis
-    kalshiTestData.json -- Saved test data output
-
-client/
-  src/
-    api.ts              -- Typed API client
-    Dashboard.tsx       -- Main dashboard with category tabs
-    EventCard.tsx       -- Individual event card component
-    EmailSignup.tsx     -- Subscriber form
-    App.tsx             -- Root component
-```
-
-## Running Locally
-
-```bash
-# Install dependencies
-npm install
-
-# Set up PostgreSQL
-createdb prediction_pulse
-
-# Create server/.env with:
-# DATABASE_URL=postgresql://localhost:5432/prediction_pulse
-# OPENAI_API_KEY=your-key-here
-# FRONTEND_ORIGIN=http://localhost:5173
-# PORT=3001
-
-# Start backend (terminal 1)
-npm run dev -w server
-
-# Start frontend (terminal 2)
-npm run dev -w client
-
-# Visit http://localhost:5173
-```
-
-## What's NOT in MVP
-
-- No user accounts or login
-- No historical charts or deep analytics
-- No real-time WebSocket streaming
-- No trading integration
-- No mobile app
-- No multi-platform aggregation (just Kalshi)
-- No personalization
-
 ## Architecture Diagram
 
 ```mermaid
@@ -356,6 +204,159 @@ sequenceDiagram
     DB-->>Cron: subscriber emails[]
     Cron->>Email: send digest to each subscriber
 ```
+## Data Model
+
+### Events (parent)
+
+```sql
+events (
+  event_ticker  VARCHAR(255) UNIQUE NOT NULL,  -- "KXFEDRATE-26JUN"
+  title         VARCHAR(500) NOT NULL,          -- "Will the Fed cut rates?"
+  category      VARCHAR(50) NOT NULL,           -- economics | politics | climate | financials
+  total_volume  NUMERIC DEFAULT 0,              -- sum of all child market volumes
+  is_mutually_exclusive BOOLEAN DEFAULT FALSE,  -- true = pick one outcome, false = threshold-based
+  market_count  INTEGER DEFAULT 0,
+  last_updated  TIMESTAMPTZ
+)
+```
+
+### Markets (children of events)
+
+```sql
+markets (
+  kalshi_id     VARCHAR(255) UNIQUE NOT NULL,  -- "KXFEDRATE-26JUN-T450"
+  event_ticker  VARCHAR(255) REFERENCES events, -- FK to parent event
+  title         VARCHAR(500) NOT NULL,          -- specific contract question
+  current_price NUMERIC(5,4),                   -- 0.73 = 73% probability
+  previous_price NUMERIC(5,4),                  -- for trend calculation
+  volume        NUMERIC DEFAULT 0,
+  last_updated  TIMESTAMPTZ
+)
+```
+
+### Insights (per event)
+
+```sql
+insights (
+  event_ticker  VARCHAR(255) UNIQUE REFERENCES events,
+  text          TEXT NOT NULL,                   -- AI-generated, max 60 words
+  generated_at  TIMESTAMPTZ
+)
+```
+
+### Subscribers
+
+```sql
+subscribers (
+  email         VARCHAR(255) UNIQUE NOT NULL,
+  subscribed_at TIMESTAMPTZ,
+  active        BOOLEAN DEFAULT TRUE             -- soft delete
+)
+```
+
+## Event Types
+
+**Mutually Exclusive** (is_mutually_exclusive = true):
+- Only one outcome can happen
+- Example: "Who will be the next Pope?" → Cardinal A OR Cardinal B
+- Child market probabilities roughly sum to 100%
+
+**Non-Mutually Exclusive** (is_mutually_exclusive = false):
+- Multiple outcomes can be true simultaneously
+- Example: "How high will unemployment get?" → thresholds at 5%, 9%, 12%
+- If unemployment hits 12%, the 5% and 9% markets also resolve yes
+
+## Categorization
+
+Uses Kalshi's own category field from the events API. No keyword matching.
+
+| Kalshi Category | Our Category |
+|---|---|
+| Economics | economics |
+| Financials | financials |
+| Companies | financials |
+| Politics | politics |
+| Elections | politics |
+| Climate and Weather | climate |
+
+All other Kalshi categories (Sports, Entertainment, etc.) are excluded.
+
+## Tech Stack
+
+| Layer | Choice |
+|---|---|
+| Frontend | React + TypeScript (Vite) |
+| Backend | Node.js + Express |
+| Data Source | Kalshi public REST API |
+| AI | OpenAI API (GPT-4o-mini) |
+| Email | Resend or SendGrid |
+| Database | PostgreSQL |
+| Scheduler | node-cron |
+
+## Project Structure
+
+```
+server/
+  src/
+    index.ts            -- Express entry point, cron schedulers, middleware
+    db.ts               -- PostgreSQL connection pool
+    schema.ts           -- Table creation
+    types.ts            -- Shared TypeScript types
+    categorizeKalshi.ts -- Kalshi category → internal category mapping
+    fetchKalshi.ts      -- Fetches events + markets from Kalshi API
+    insights.ts         -- OpenAI insight generation
+    emailJob.ts         -- Weekly digest builder + sender
+    routes.ts           -- Express API routes
+    ranking.ts          -- Top event selection by volume
+    trend.ts            -- Trend direction calculation
+  testData/
+    kalshiTestData.ts   -- Script to fetch real Kalshi data for analysis
+    kalshiTestData.json -- Saved test data output
+
+client/
+  src/
+    api.ts              -- Typed API client
+    Dashboard.tsx       -- Main dashboard with category tabs
+    EventCard.tsx       -- Individual event card component
+    EmailSignup.tsx     -- Subscriber form
+    App.tsx             -- Root component
+```
+
+## Running Locally
+
+```bash
+# Install dependencies
+npm install
+
+# Set up PostgreSQL
+createdb prediction_pulse
+
+# Create server/.env with:
+# DATABASE_URL=postgresql://localhost:5432/prediction_pulse
+# OPENAI_API_KEY=your-key-here
+# FRONTEND_ORIGIN=http://localhost:5173
+# PORT=3001
+
+# Start backend (terminal 1)
+npm run dev -w server
+
+# Start frontend (terminal 2)
+npm run dev -w client
+
+# Visit http://localhost:5173
+```
+
+## What's NOT in MVP
+
+- No user accounts or login
+- No historical charts or deep analytics
+- No real-time WebSocket streaming
+- No trading integration
+- No mobile app
+- No multi-platform aggregation (just Kalshi)
+- No personalization
+
+
 
 ## Component Interfaces
 
