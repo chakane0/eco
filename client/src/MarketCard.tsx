@@ -18,13 +18,11 @@ export function MarketCard({market}: Props) {
     return (
         <div className={styles.card}>
             <h3 className={styles.title}>
-                market title
                 {market.title}
             </h3>
-            stats
             <div className={styles.stats}>
                 probability
-                <span className={styles.stats}>{probability}</span>
+                <span className={styles.probability}>{probability}%</span>
                 <span className={`${styles.trend} ${trendClass}`}>{arrow} {Math.abs(market.trendPercent).toFixed(1)}%</span>
             </div>
             {market.insight && (
