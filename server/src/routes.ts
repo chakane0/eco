@@ -3,15 +3,28 @@
 
 import { Router } from 'express'
 import { query } from './db.js'
+import { generateEventInsight } from './insights.js'
 import { EmailSchema, type MarketCategory, type EventWithInsight } from './types.js'
 
 export const router = Router()
+
+// GET /api/categories
+router.get('/categories', async (_req, res) => {
+  try {
+    const result = await query<{ category: string; event_count: number }>(
+      'SELECT category, COUNT(*) as event_count FROM events GROUP BY category ORDER BY category'
+    )
+    res.json({ categories: result.rows.map(r => r.category) })
+  } catch (err) {
+    console.error('Error fetching categories:', err)
+    res.status(503).json({ error: 'Service temporarily unavailable' })
+  }
+})
 
 // GET /api/events?category=:category
 router.get('/events', async (req, res) => {
   try {
     const category = req.query.category as string | undefined
-    const validCategories = ['economics', 'politics', 'climate', 'financials']
 
     let sql = `
       SELECT e.*, i.text as insight_text
@@ -20,12 +33,12 @@ router.get('/events', async (req, res) => {
     `
     const params: unknown[] = []
 
-    if (category && validCategories.includes(category)) {
+    if (category) {
       sql += ' WHERE e.category = $1'
       params.push(category)
     }
 
-    sql += ' ORDER BY e.total_volume DESC LIMIT 20'
+    sql += ' ORDER BY e.total_volume DESC LIMIT 5'
 
     const result = await query<{
       event_ticker: string
@@ -53,6 +66,51 @@ router.get('/events', async (req, res) => {
   } catch (err) {
     console.error('Error fetching events:', err)
     res.status(503).json({ error: 'Service temporarily unavailable' })
+  }
+})
+
+// GET /api/events/:eventTicker/markets
+router.get('/events/:eventTicker/markets', async (req, res) => {
+  try {
+    const { eventTicker } = req.params
+
+    const result = await query<{
+      kalshi_id: string
+      title: string
+      current_price: string
+      previous_price: string
+      volume: string
+      last_updated: Date
+    }>(
+      'SELECT * FROM markets WHERE event_ticker = $1 ORDER BY volume DESC',
+      [eventTicker]
+    )
+
+    const markets = result.rows.map(row => ({
+      kalshiId: row.kalshi_id,
+      title: row.title,
+      currentPrice: parseFloat(row.current_price),
+      previousPrice: parseFloat(row.previous_price),
+      volume: parseFloat(row.volume),
+      lastUpdated: row.last_updated.toISOString(),
+    }))
+
+    res.json({ markets })
+  } catch (err) {
+    console.error('Error fetching markets:', err)
+    res.status(503).json({ error: 'Service temporarily unavailable' })
+  }
+})
+
+// POST /api/events/:eventTicker/generate-insight
+router.post('/events/:eventTicker/generate-insight', async (req, res) => {
+  try {
+    const { eventTicker } = req.params
+    const insight = await generateEventInsight(eventTicker)
+    res.json({ insight: insight.text })
+  } catch (err) {
+    console.error('Error generating insight:', err)
+    res.status(503).json({ error: 'Failed to generate insight' })
   }
 })
 

@@ -5,7 +5,7 @@
     "kalshiCategory": "Elections",
     "ourCategory": "politics",
     "marketCount": 20,
-    "totalVolume": 483271.72000000003,
+    "totalVolume": 483306.72000000003,
     "isMutuallyExclusive": true,
     "markets": [
       {
@@ -15,9 +15,9 @@
         "yesAsk": "0.0610",
         "lastPrice": "0.0600",
         "volume": "131471.80",
-        "volume24h": "107.25",
+        "volume24h": "0.00",
         "openInterest": "80156.05",
-        "previousPrice": "0.0980",
+        "previousPrice": "0.0600",
         "status": "active"
       },
       {
@@ -27,7 +27,7 @@
         "yesAsk": "0.1300",
         "lastPrice": "0.1300",
         "volume": "126888.74",
-        "volume24h": "37.51",
+        "volume24h": "0.00",
         "openInterest": "53721.49",
         "previousPrice": "0.1300",
         "status": "active"
@@ -37,10 +37,10 @@
         "marketTitle": "Will Angela Rayner be the next Prime Minister of United Kingdom?",
         "yesBid": "0.2300",
         "yesAsk": "0.2700",
-        "lastPrice": "0.2700",
-        "volume": "44330.00",
-        "volume24h": "0.00",
-        "openInterest": "16021.00",
+        "lastPrice": "0.2300",
+        "volume": "44365.00",
+        "volume24h": "35.00",
+        "openInterest": "15986.00",
         "previousPrice": "0.2700",
         "status": "active"
       },
@@ -75,7 +75,7 @@
         "yesAsk": "0.1300",
         "lastPrice": "0.1300",
         "volume": "40299.40",
-        "volume24h": "14.50",
+        "volume24h": "0.00",
         "openInterest": "13962.40",
         "previousPrice": "0.1300",
         "status": "active"
@@ -84,7 +84,7 @@
         "ticker": "KXNEXTUKPM-30-KB",
         "marketTitle": "Will Kemi Badenoch be the next Prime Minister of United Kingdom?",
         "yesBid": "0.0230",
-        "yesAsk": "0.0380",
+        "yesAsk": "0.0390",
         "lastPrice": "0.0400",
         "volume": "15572.00",
         "volume24h": "0.00",
@@ -99,15 +99,15 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "8761.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "8756.00",
-        "previousPrice": "0.0100",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
         "ticker": "KXNEXTUKPM-30-SMAH",
         "marketTitle": "Will Shabana Mahmood be the next Prime Minister of United Kingdom?",
-        "yesBid": "0.0240",
+        "yesBid": "0.0250",
         "yesAsk": "0.0780",
         "lastPrice": "0.0200",
         "volume": "7923.30",
@@ -123,7 +123,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "7465.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "6569.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -131,20 +131,20 @@
       {
         "ticker": "KXNEXTUKPM-30-YCOO",
         "marketTitle": "Will Yvette Cooper be the next Prime Minister of United Kingdom?",
-        "yesBid": "0.0230",
+        "yesBid": "0.0240",
         "yesAsk": "0.0440",
         "lastPrice": "0.0500",
         "volume": "5318.51",
-        "volume24h": "1.00",
+        "volume24h": "0.00",
         "openInterest": "4342.51",
-        "previousPrice": "0.0700",
+        "previousPrice": "0.0500",
         "status": "active"
       },
       {
         "ticker": "KXNEXTUKPM-30-ACAR",
         "marketTitle": "Will Al Carns be the next Prime Minister of United Kingdom?",
-        "yesBid": "0.0180",
-        "yesAsk": "0.0280",
+        "yesBid": "0.0190",
+        "yesAsk": "0.0290",
         "lastPrice": "0.0100",
         "volume": "4959.00",
         "volume24h": "8.00",
@@ -155,13 +155,13 @@
       {
         "ticker": "KXNEXTUKPM-30-DLAM",
         "marketTitle": "Will David Lammy be the next Prime Minister of United Kingdom?",
-        "yesBid": "0.0110",
-        "yesAsk": "0.0280",
+        "yesBid": "0.0120",
+        "yesAsk": "0.0290",
         "lastPrice": "0.0090",
         "volume": "2421.00",
-        "volume24h": "5.00",
+        "volume24h": "2.00",
         "openInterest": "2381.00",
-        "previousPrice": "0.0300",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -171,9 +171,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0100",
         "volume": "1870.00",
-        "volume24h": "822.00",
+        "volume24h": "820.00",
         "openInterest": "1117.00",
-        "previousPrice": "0.0010",
+        "previousPrice": "0.0100",
         "status": "active"
       },
       {
@@ -183,7 +183,7 @@
         "yesAsk": "0.0140",
         "lastPrice": "0.0010",
         "volume": "1117.00",
-        "volume24h": "430.00",
+        "volume24h": "427.00",
         "openInterest": "1116.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -195,7 +195,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "991.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "991.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -207,7 +207,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "357.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "357.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -219,7 +219,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "323.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "323.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -231,7 +231,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "23.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "23.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -243,7 +243,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "18.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "18.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -256,18 +256,18 @@
     "kalshiCategory": "Economics",
     "ourCategory": "economics",
     "marketCount": 4,
-    "totalVolume": 385541.46,
+    "totalVolume": 385880.46,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "KXMUSKTRILLION-27",
         "marketTitle": "Will Elon Musk be a trillionaire before 2027?",
-        "yesBid": "0.8300",
-        "yesAsk": "0.8400",
-        "lastPrice": "0.8300",
-        "volume": "251889.96",
-        "volume24h": "6.33",
-        "openInterest": "87834.63",
+        "yesBid": "0.8000",
+        "yesAsk": "0.8200",
+        "lastPrice": "0.8200",
+        "volume": "252228.96",
+        "volume24h": "342.33",
+        "openInterest": "87850.63",
         "previousPrice": "0.8400",
         "status": "active"
       },
@@ -275,7 +275,7 @@
         "ticker": "KXMUSKTRILLION-28",
         "marketTitle": "Will Elon Musk be a trillionaire before 2028?",
         "yesBid": "0.8000",
-        "yesAsk": "0.8500",
+        "yesAsk": "0.8200",
         "lastPrice": "0.8500",
         "volume": "60293.99",
         "volume24h": "2.32",
@@ -286,7 +286,7 @@
       {
         "ticker": "KXMUSKTRILLION-30",
         "marketTitle": "Will Elon Musk be a trillionaire before 2030?",
-        "yesBid": "0.8300",
+        "yesBid": "0.8400",
         "yesAsk": "0.8800",
         "lastPrice": "0.8800",
         "volume": "37499.00",
@@ -315,31 +315,31 @@
     "kalshiCategory": "Politics",
     "ourCategory": "politics",
     "marketCount": 5,
-    "totalVolume": 277261.77,
+    "totalVolume": 277298.71,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "KXTAIWANLVL4-27JAN01",
         "marketTitle": "Will the U.S. State Department issue a Level 4 warning for Taiwan before Jan 1, 2027?",
         "yesBid": "0.1500",
-        "yesAsk": "0.2000",
+        "yesAsk": "0.1900",
         "lastPrice": "0.1900",
         "volume": "122754.75",
-        "volume24h": "16.00",
+        "volume24h": "0.00",
         "openInterest": "79627.75",
-        "previousPrice": "0.1500",
+        "previousPrice": "0.1900",
         "status": "active"
       },
       {
         "ticker": "KXTAIWANLVL4-26JUL01",
         "marketTitle": "Will the U.S. State Department issue a Level 4 warning for Taiwan before Jul 1, 2026?",
         "yesBid": "0.0400",
-        "yesAsk": "0.0500",
-        "lastPrice": "0.0500",
-        "volume": "107272.51",
-        "volume24h": "9.00",
+        "yesAsk": "0.0490",
+        "lastPrice": "0.0400",
+        "volume": "107309.45",
+        "volume24h": "36.94",
         "openInterest": "62932.70",
-        "previousPrice": "0.0400",
+        "previousPrice": "0.0500",
         "status": "active"
       },
       {
@@ -357,8 +357,8 @@
       {
         "ticker": "KXTAIWANLVL4-30JAN01",
         "marketTitle": "Will the U.S. State Department issue a Level 4 warning for Taiwan before Jan 1, 2030?",
-        "yesBid": "0.4700",
-        "yesAsk": "0.5100",
+        "yesBid": "0.4500",
+        "yesAsk": "0.5000",
         "lastPrice": "0.4600",
         "volume": "16088.07",
         "volume24h": "7.00",
@@ -370,7 +370,7 @@
         "ticker": "KXTAIWANLVL4-29JAN01",
         "marketTitle": "Will the U.S. State Department issue a Level 4 warning for Taiwan before Jan 1, 2029?",
         "yesBid": "0.4100",
-        "yesAsk": "0.4400",
+        "yesAsk": "0.4600",
         "lastPrice": "0.4700",
         "volume": "13597.59",
         "volume24h": "0.00",
@@ -386,7 +386,7 @@
     "kalshiCategory": "Economics",
     "ourCategory": "economics",
     "marketCount": 11,
-    "totalVolume": 248434.01,
+    "totalVolume": 248552.53,
     "isMutuallyExclusive": true,
     "markets": [
       {
@@ -394,10 +394,10 @@
         "marketTitle": "Will Elon Musk be the world's first trillionaire?",
         "yesBid": "0.8800",
         "yesAsk": "0.9000",
-        "lastPrice": "0.9000",
-        "volume": "109788.46",
-        "volume24h": "853.42",
-        "openInterest": "43078.88",
+        "lastPrice": "0.8800",
+        "volume": "109875.77",
+        "volume24h": "518.93",
+        "openInterest": "43087.70",
         "previousPrice": "0.9000",
         "status": "active"
       },
@@ -407,9 +407,9 @@
         "yesBid": "0.0200",
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
-        "volume": "28374.70",
-        "volume24h": "344.34",
-        "openInterest": "15410.70",
+        "volume": "28405.91",
+        "volume24h": "343.34",
+        "openInterest": "15441.91",
         "previousPrice": "0.0300",
         "status": "active"
       },
@@ -420,9 +420,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "26946.72",
-        "volume24h": "159.06",
+        "volume24h": "0.00",
         "openInterest": "14977.60",
-        "previousPrice": "0.0100",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -432,7 +432,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "14778.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "13329.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -444,9 +444,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "13142.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "8685.00",
-        "previousPrice": "0.0100",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -456,7 +456,7 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "12720.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "11176.00",
         "previousPrice": "0.0200",
         "status": "active"
@@ -468,7 +468,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "10725.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "10481.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -480,7 +480,7 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "9619.62",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "6008.62",
         "previousPrice": "0.0200",
         "status": "active"
@@ -492,7 +492,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "9368.51",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "9098.51",
         "previousPrice": "0.0100",
         "status": "active"
@@ -504,7 +504,7 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "8022.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "7970.00",
         "previousPrice": "0.0200",
         "status": "active"
@@ -516,9 +516,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "4949.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "4617.00",
-        "previousPrice": "0.0100",
+        "previousPrice": "0.0200",
         "status": "active"
       }
     ]
@@ -539,9 +539,9 @@
         "yesAsk": "0.4800",
         "lastPrice": "0.4500",
         "volume": "62114.92",
-        "volume24h": "1243.50",
+        "volume24h": "1181.92",
         "openInterest": "33944.71",
-        "previousPrice": "0.4200",
+        "previousPrice": "0.4000",
         "status": "active"
       },
       {
@@ -551,9 +551,9 @@
         "yesAsk": "0.1600",
         "lastPrice": "0.1600",
         "volume": "36677.39",
-        "volume24h": "38.68",
+        "volume24h": "20.68",
         "openInterest": "23744.69",
-        "previousPrice": "0.1700",
+        "previousPrice": "0.1600",
         "status": "active"
       },
       {
@@ -575,7 +575,7 @@
         "yesAsk": "0.1600",
         "lastPrice": "0.1600",
         "volume": "18218.77",
-        "volume24h": "29.51",
+        "volume24h": "0.00",
         "openInterest": "14744.77",
         "previousPrice": "0.1600",
         "status": "active"
@@ -636,42 +636,42 @@
     "kalshiCategory": "Elections",
     "ourCategory": "politics",
     "marketCount": 8,
-    "totalVolume": 170207.37,
+    "totalVolume": 171034.37,
     "isMutuallyExclusive": true,
     "markets": [
       {
         "ticker": "KXUKPARTY-29-REST",
         "marketTitle": "Will Restore Britain win the next U.K. election?",
         "yesBid": "0.0700",
-        "yesAsk": "0.1300",
-        "lastPrice": "0.1300",
-        "volume": "74529.86",
-        "volume24h": "219.46",
-        "openInterest": "46768.86",
-        "previousPrice": "0.0700",
+        "yesAsk": "0.1200",
+        "lastPrice": "0.0690",
+        "volume": "75353.86",
+        "volume24h": "824.00",
+        "openInterest": "45944.86",
+        "previousPrice": "0.1300",
         "status": "active"
       },
       {
         "ticker": "KXUKPARTY-29-R",
         "marketTitle": "Will Reform win the next U.K. election?",
-        "yesBid": "0.3700",
+        "yesBid": "0.3900",
         "yesAsk": "0.4100",
         "lastPrice": "0.3900",
         "volume": "43619.34",
-        "volume24h": "55.61",
+        "volume24h": "0.00",
         "openInterest": "13177.00",
-        "previousPrice": "0.4100",
+        "previousPrice": "0.3900",
         "status": "active"
       },
       {
         "ticker": "KXUKPARTY-29-C",
         "marketTitle": "Will Conservative win the next U.K. election?",
-        "yesBid": "0.1100",
+        "yesBid": "0.0990",
         "yesAsk": "0.1300",
         "lastPrice": "0.1300",
-        "volume": "18871.00",
-        "volume24h": "0.00",
-        "openInterest": "3945.00",
+        "volume": "18872.00",
+        "volume24h": "1.00",
+        "openInterest": "3946.00",
         "previousPrice": "0.1300",
         "status": "active"
       },
@@ -682,7 +682,7 @@
         "yesAsk": "0.1300",
         "lastPrice": "0.1300",
         "volume": "17150.52",
-        "volume24h": "145.01",
+        "volume24h": "0.00",
         "openInterest": "10492.47",
         "previousPrice": "0.1300",
         "status": "active"
@@ -690,13 +690,13 @@
       {
         "ticker": "KXUKPARTY-29-L",
         "marketTitle": "Will Labour win the next U.K. election?",
-        "yesBid": "0.2300",
+        "yesBid": "0.2500",
         "yesAsk": "0.2700",
-        "lastPrice": "0.2500",
-        "volume": "10690.65",
-        "volume24h": "19.65",
-        "openInterest": "2936.65",
-        "previousPrice": "0.2700",
+        "lastPrice": "0.2400",
+        "volume": "10692.65",
+        "volume24h": "2.00",
+        "openInterest": "2938.65",
+        "previousPrice": "0.2500",
         "status": "active"
       },
       {
@@ -706,7 +706,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "2858.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "2842.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -718,9 +718,9 @@
         "yesAsk": "0.0040",
         "lastPrice": "0.0040",
         "volume": "2137.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "1594.00",
-        "previousPrice": "0.0010",
+        "previousPrice": "0.0040",
         "status": "active"
       },
       {
@@ -730,7 +730,7 @@
         "yesAsk": "0.0050",
         "lastPrice": "0.0050",
         "volume": "351.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "351.00",
         "previousPrice": "0.0050",
         "status": "active"
@@ -743,7 +743,7 @@
     "kalshiCategory": "Climate and Weather",
     "ourCategory": "climate",
     "marketCount": 10,
-    "totalVolume": 112186.84,
+    "totalVolume": 112190.84,
     "isMutuallyExclusive": true,
     "markets": [
       {
@@ -752,9 +752,9 @@
         "yesBid": "0.5000",
         "yesAsk": "0.5500",
         "lastPrice": "0.5000",
-        "volume": "36656.40",
-        "volume24h": "0.00",
-        "openInterest": "9816.53",
+        "volume": "36660.40",
+        "volume24h": "4.00",
+        "openInterest": "9812.53",
         "previousPrice": "0.5000",
         "status": "active"
       },
@@ -765,9 +765,9 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
         "volume": "23352.85",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "9888.26",
-        "previousPrice": "0.0400",
+        "previousPrice": "0.0300",
         "status": "active"
       },
       {
@@ -777,7 +777,7 @@
         "yesAsk": "0.0400",
         "lastPrice": "0.0400",
         "volume": "12966.50",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "6976.00",
         "previousPrice": "0.0400",
         "status": "active"
@@ -789,7 +789,7 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
         "volume": "7865.42",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "4532.00",
         "previousPrice": "0.0300",
         "status": "active"
@@ -801,9 +801,9 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
         "volume": "7003.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "4046.00",
-        "previousPrice": "0.0200",
+        "previousPrice": "0.0300",
         "status": "active"
       },
       {
@@ -813,9 +813,9 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
         "volume": "6778.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "3441.00",
-        "previousPrice": "0.0500",
+        "previousPrice": "0.0300",
         "status": "active"
       },
       {
@@ -825,7 +825,7 @@
         "yesAsk": "0.0400",
         "lastPrice": "0.0400",
         "volume": "4835.15",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "3499.15",
         "previousPrice": "0.0400",
         "status": "active"
@@ -837,9 +837,9 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
         "volume": "4592.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "2351.00",
-        "previousPrice": "0.0200",
+        "previousPrice": "0.0300",
         "status": "active"
       },
       {
@@ -874,7 +874,7 @@
     "kalshiCategory": "Financials",
     "ourCategory": "financials",
     "marketCount": 2,
-    "totalVolume": 109486.07,
+    "totalVolume": 109584.68,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -882,22 +882,22 @@
         "marketTitle": "Will Open AI or Anthropic IPO first?",
         "yesBid": "0.6900",
         "yesAsk": "0.7400",
-        "lastPrice": "0.7400",
-        "volume": "61175.58",
-        "volume24h": "6.00",
-        "openInterest": "23205.53",
+        "lastPrice": "0.6900",
+        "volume": "61178.58",
+        "volume24h": "8.00",
+        "openInterest": "23202.56",
         "previousPrice": "0.7000",
         "status": "active"
       },
       {
         "ticker": "KXOAIANTH-40-OAI",
         "marketTitle": "Will OpenAI or Anthropic IPO first?",
-        "yesBid": "0.3200",
-        "yesAsk": "0.3700",
-        "lastPrice": "0.3100",
-        "volume": "48310.49",
-        "volume24h": "13.52",
-        "openInterest": "15857.30",
+        "yesBid": "0.3400",
+        "yesAsk": "0.3900",
+        "lastPrice": "0.3900",
+        "volume": "48406.10",
+        "volume24h": "106.61",
+        "openInterest": "15945.91",
         "previousPrice": "0.3800",
         "status": "active"
       }
@@ -909,7 +909,7 @@
     "kalshiCategory": "Elections",
     "ourCategory": "politics",
     "marketCount": 7,
-    "totalVolume": 101254.56,
+    "totalVolume": 101304.56,
     "isMutuallyExclusive": true,
     "markets": [
       {
@@ -918,9 +918,9 @@
         "yesBid": "0.0500",
         "yesAsk": "0.0840",
         "lastPrice": "0.0500",
-        "volume": "18723.00",
-        "volume24h": "0.00",
-        "openInterest": "4968.86",
+        "volume": "18733.00",
+        "volume24h": "10.00",
+        "openInterest": "4978.86",
         "previousPrice": "0.0500",
         "status": "active"
       },
@@ -954,9 +954,9 @@
         "yesBid": "0.0300",
         "yesAsk": "0.0600",
         "lastPrice": "0.0300",
-        "volume": "13537.00",
-        "volume24h": "0.00",
-        "openInterest": "2272.00",
+        "volume": "13552.00",
+        "volume24h": "15.00",
+        "openInterest": "2287.00",
         "previousPrice": "0.0300",
         "status": "active"
       },
@@ -966,9 +966,9 @@
         "yesBid": "0.0500",
         "yesAsk": "0.0800",
         "lastPrice": "0.0500",
-        "volume": "13219.00",
-        "volume24h": "156.00",
-        "openInterest": "3939.00",
+        "volume": "13234.00",
+        "volume24h": "171.00",
+        "openInterest": "3954.00",
         "previousPrice": "0.0650",
         "status": "active"
       },
@@ -989,10 +989,10 @@
         "marketTitle": "Who will the next Pope be?",
         "yesBid": "0.0400",
         "yesAsk": "0.0500",
-        "lastPrice": "0.0500",
-        "volume": "10872.00",
-        "volume24h": "1.00",
-        "openInterest": "2097.00",
+        "lastPrice": "0.0400",
+        "volume": "10882.00",
+        "volume24h": "10.00",
+        "openInterest": "2107.00",
         "previousPrice": "0.0500",
         "status": "active"
       }
@@ -1027,7 +1027,7 @@
     "kalshiCategory": "Politics",
     "ourCategory": "politics",
     "marketCount": 5,
-    "totalVolume": 74251,
+    "totalVolume": 74260,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -1045,8 +1045,8 @@
       {
         "ticker": "KXGOVTCUTS-28-1000",
         "marketTitle": "Will government spending decrease by 1000 before 2028?",
-        "yesBid": "0.0350",
-        "yesAsk": "0.0950",
+        "yesBid": "0.0400",
+        "yesAsk": "0.0900",
         "lastPrice": "0.1100",
         "volume": "15780.00",
         "volume24h": "5.00",
@@ -1059,17 +1059,17 @@
         "marketTitle": "Will government spending decrease by 2000 before 2028?",
         "yesBid": "0.0470",
         "yesAsk": "0.1200",
-        "lastPrice": "0.1200",
-        "volume": "9803.00",
-        "volume24h": "4.00",
-        "openInterest": "1521.00",
+        "lastPrice": "0.0470",
+        "volume": "9812.00",
+        "volume24h": "13.00",
+        "openInterest": "1526.00",
         "previousPrice": "0.0740",
         "status": "active"
       },
       {
         "ticker": "KXGOVTCUTS-28-500",
         "marketTitle": "Will government spending decrease by 500 before 2028?",
-        "yesBid": "0.0340",
+        "yesBid": "0.0400",
         "yesAsk": "0.0700",
         "lastPrice": "0.0700",
         "volume": "9695.00",
@@ -1081,7 +1081,7 @@
       {
         "ticker": "KXGOVTCUTS-28-750",
         "marketTitle": "Will government spending decrease by 750 before 2028?",
-        "yesBid": "0.0640",
+        "yesBid": "0.0630",
         "yesAsk": "0.0900",
         "lastPrice": "0.0890",
         "volume": "8855.00",
@@ -1098,18 +1098,18 @@
     "kalshiCategory": "Elections",
     "ourCategory": "politics",
     "marketCount": 12,
-    "totalVolume": 68011.23999999999,
+    "totalVolume": 68514.79,
     "isMutuallyExclusive": true,
     "markets": [
       {
         "ticker": "KXNEXTISRAELPM-45JAN01-NBEN",
         "marketTitle": "Will Naftali Bennett be the next Prime Minister of Israel?",
-        "yesBid": "0.2900",
+        "yesBid": "0.3000",
         "yesAsk": "0.3400",
         "lastPrice": "0.3500",
-        "volume": "22755.10",
-        "volume24h": "13.95",
-        "openInterest": "6765.10",
+        "volume": "22837.15",
+        "volume24h": "96.00",
+        "openInterest": "6714.10",
         "previousPrice": "0.3600",
         "status": "active"
       },
@@ -1119,21 +1119,21 @@
         "yesBid": "0.0990",
         "yesAsk": "0.1000",
         "lastPrice": "0.1000",
-        "volume": "10091.68",
-        "volume24h": "90.00",
-        "openInterest": "4075.00",
-        "previousPrice": "0.1100",
+        "volume": "10101.68",
+        "volume24h": "60.00",
+        "openInterest": "4085.00",
+        "previousPrice": "0.1000",
         "status": "active"
       },
       {
         "ticker": "KXNEXTISRAELPM-45JAN01-IBEN",
         "marketTitle": "Will Itamar Ben-Gvir be the next Prime Minister of Israel?",
         "yesBid": "0.0300",
-        "yesAsk": "0.0390",
-        "lastPrice": "0.0400",
-        "volume": "7137.34",
-        "volume24h": "0.00",
-        "openInterest": "4162.00",
+        "yesAsk": "0.0600",
+        "lastPrice": "0.0600",
+        "volume": "7548.84",
+        "volume24h": "411.50",
+        "openInterest": "4396.00",
         "previousPrice": "0.0400",
         "status": "active"
       },
@@ -1144,7 +1144,7 @@
         "yesAsk": "0.0400",
         "lastPrice": "0.0400",
         "volume": "6838.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "1901.00",
         "previousPrice": "0.0400",
         "status": "active"
@@ -1156,9 +1156,9 @@
         "yesAsk": "0.0590",
         "lastPrice": "0.0500",
         "volume": "4545.00",
-        "volume24h": "34.00",
+        "volume24h": "0.00",
         "openInterest": "1811.00",
-        "previousPrice": "0.0600",
+        "previousPrice": "0.0500",
         "status": "active"
       },
       {
@@ -1192,9 +1192,9 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "2829.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "1184.00",
-        "previousPrice": "0.0010",
+        "previousPrice": "0.0100",
         "status": "active"
       },
       {
@@ -1204,7 +1204,7 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
         "volume": "2261.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "1196.00",
         "previousPrice": "0.0300",
         "status": "active"
@@ -1216,9 +1216,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "1847.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "623.00",
-        "previousPrice": "0.0300",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -1228,7 +1228,7 @@
         "yesAsk": "0.0100",
         "lastPrice": "0.0100",
         "volume": "1743.66",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "918.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -1240,7 +1240,7 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0300",
         "volume": "1306.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "880.00",
         "previousPrice": "0.0300",
         "status": "active"
@@ -1253,18 +1253,18 @@
     "kalshiCategory": "Politics",
     "ourCategory": "politics",
     "marketCount": 3,
-    "totalVolume": 67510.38,
+    "totalVolume": 67559.38,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "KXDEBTGROWTH-28DEC31-40",
         "marketTitle": "Will the national debt hit $40 trillion during the Trump Administration?",
-        "yesBid": "0.9710",
+        "yesBid": "0.9700",
         "yesAsk": "0.9900",
-        "lastPrice": "0.9710",
-        "volume": "44165.00",
-        "volume24h": "0.00",
-        "openInterest": "9672.00",
+        "lastPrice": "0.9900",
+        "volume": "44214.00",
+        "volume24h": "49.00",
+        "openInterest": "9623.00",
         "previousPrice": "0.9710",
         "status": "active"
       },
@@ -1300,7 +1300,7 @@
     "kalshiCategory": "Elections",
     "ourCategory": "politics",
     "marketCount": 1,
-    "totalVolume": 57695.31,
+    "totalVolume": 57715.51,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -1308,10 +1308,10 @@
         "marketTitle": "Will Alberta vote to secede from Canada before the next general election?",
         "yesBid": "0.2200",
         "yesAsk": "0.2700",
-        "lastPrice": "0.2300",
-        "volume": "57695.31",
-        "volume24h": "55.23",
-        "openInterest": "28757.13",
+        "lastPrice": "0.2200",
+        "volume": "57715.51",
+        "volume24h": "75.43",
+        "openInterest": "28777.33",
         "previousPrice": "0.2100",
         "status": "active"
       }
@@ -1323,7 +1323,7 @@
     "kalshiCategory": "Climate and Weather",
     "ourCategory": "climate",
     "marketCount": 2,
-    "totalVolume": 53221.53,
+    "totalVolume": 53223.53,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -1342,11 +1342,11 @@
         "ticker": "USCLIMATE-2030",
         "marketTitle": "Will the US meet its climate goals?",
         "yesBid": "0.1500",
-        "yesAsk": "0.1900",
+        "yesAsk": "0.1800",
         "lastPrice": "0.1500",
-        "volume": "7118.78",
-        "volume24h": "1.00",
-        "openInterest": "2264.94",
+        "volume": "7120.78",
+        "volume24h": "2.00",
+        "openInterest": "2266.94",
         "previousPrice": "0.1500",
         "status": "active"
       }
@@ -1358,19 +1358,19 @@
     "kalshiCategory": "Companies",
     "ourCategory": "financials",
     "marketCount": 1,
-    "totalVolume": 49286.43,
+    "totalVolume": 49300.72,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "APPLEUS-29DEC31",
         "marketTitle": "DOJ wins their anti-trust case against Apple?",
-        "yesBid": "0.3300",
-        "yesAsk": "0.4000",
-        "lastPrice": "0.3600",
-        "volume": "49286.43",
-        "volume24h": "472.75",
-        "openInterest": "7791.49",
-        "previousPrice": "0.3700",
+        "yesBid": "0.2900",
+        "yesAsk": "0.3200",
+        "lastPrice": "0.2900",
+        "volume": "49300.72",
+        "volume24h": "486.04",
+        "openInterest": "7791.78",
+        "previousPrice": "0.3600",
         "status": "active"
       }
     ]
@@ -1381,7 +1381,7 @@
     "kalshiCategory": "Politics",
     "ourCategory": "politics",
     "marketCount": 12,
-    "totalVolume": 45526.92,
+    "totalVolume": 45537.92,
     "isMutuallyExclusive": true,
     "markets": [
       {
@@ -1391,9 +1391,9 @@
         "yesAsk": "0.1100",
         "lastPrice": "0.1300",
         "volume": "9268.77",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "4145.77",
-        "previousPrice": "0.0990",
+        "previousPrice": "0.1300",
         "status": "active"
       },
       {
@@ -1402,22 +1402,22 @@
         "yesBid": "0.0780",
         "yesAsk": "0.1100",
         "lastPrice": "0.1100",
-        "volume": "7750.15",
-        "volume24h": "771.15",
+        "volume": "7761.15",
+        "volume24h": "780.15",
         "openInterest": "1749.15",
-        "previousPrice": "0.0710",
+        "previousPrice": "0.1200",
         "status": "active"
       },
       {
         "ticker": "KXEOTRUMPTERM-29JAN20-424",
         "marketTitle": "Will the President sign between 400 and 449 Executive Orders between Jan 20, 2025 and Jan 20, 2029?",
         "yesBid": "0.0910",
-        "yesAsk": "0.1200",
+        "yesAsk": "0.1000",
         "lastPrice": "0.1100",
         "volume": "4327.00",
-        "volume24h": "1416.00",
+        "volume24h": "115.00",
         "openInterest": "4219.00",
-        "previousPrice": "0.0900",
+        "previousPrice": "0.1100",
         "status": "active"
       },
       {
@@ -1427,7 +1427,7 @@
         "yesAsk": "0.1100",
         "lastPrice": "0.1100",
         "volume": "3605.00",
-        "volume24h": "1000.00",
+        "volume24h": "0.00",
         "openInterest": "3249.00",
         "previousPrice": "0.1100",
         "status": "active"
@@ -1436,19 +1436,19 @@
         "ticker": "KXEOTRUMPTERM-29JAN20-524",
         "marketTitle": "Will the President sign between 500 and 549 Executive Orders between Jan 20, 2025 and Jan 20, 2029?",
         "yesBid": "0.0720",
-        "yesAsk": "0.1200",
+        "yesAsk": "0.1000",
         "lastPrice": "0.1100",
         "volume": "3276.00",
-        "volume24h": "1018.00",
+        "volume24h": "0.00",
         "openInterest": "2997.00",
-        "previousPrice": "0.0610",
+        "previousPrice": "0.1100",
         "status": "active"
       },
       {
         "ticker": "KXEOTRUMPTERM-29JAN20-674",
         "marketTitle": "Will the President sign between 650 and 699 Executive Orders between Jan 20, 2025 and Jan 20, 2029?",
         "yesBid": "0.0600",
-        "yesAsk": "0.0870",
+        "yesAsk": "0.0700",
         "lastPrice": "0.0800",
         "volume": "3196.00",
         "volume24h": "0.00",
@@ -1459,23 +1459,23 @@
       {
         "ticker": "KXEOTRUMPTERM-29JAN20-574",
         "marketTitle": "Will the President sign between 550 and 599 Executive Orders between Jan 20, 2025 and Jan 20, 2029?",
-        "yesBid": "0.0700",
-        "yesAsk": "0.1200",
+        "yesBid": "0.0710",
+        "yesAsk": "0.1000",
         "lastPrice": "0.1100",
         "volume": "3090.00",
-        "volume24h": "1018.00",
+        "volume24h": "0.00",
         "openInterest": "2860.00",
-        "previousPrice": "0.0550",
+        "previousPrice": "0.1100",
         "status": "active"
       },
       {
         "ticker": "KXEOTRUMPTERM-29JAN20-324",
         "marketTitle": "Will the President sign between 300 and 349 Executive Orders between Jan 20, 2025 and Jan 20, 2029?",
         "yesBid": "0.0490",
-        "yesAsk": "0.1100",
+        "yesAsk": "0.0900",
         "lastPrice": "0.1100",
         "volume": "2875.00",
-        "volume24h": "1.00",
+        "volume24h": "0.00",
         "openInterest": "2665.00",
         "previousPrice": "0.1100",
         "status": "active"
@@ -1484,12 +1484,12 @@
         "ticker": "KXEOTRUMPTERM-29JAN20-624",
         "marketTitle": "Will the President sign between 600 and 649 Executive Orders between Jan 20, 2025 and Jan 20, 2029?",
         "yesBid": "0.0720",
-        "yesAsk": "0.0990",
+        "yesAsk": "0.0800",
         "lastPrice": "0.1100",
         "volume": "2606.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "2474.00",
-        "previousPrice": "0.0710",
+        "previousPrice": "0.1100",
         "status": "active"
       },
       {
@@ -1499,9 +1499,9 @@
         "yesAsk": "0.0500",
         "lastPrice": "0.0500",
         "volume": "2296.00",
-        "volume24h": "5.00",
+        "volume24h": "0.00",
         "openInterest": "1275.00",
-        "previousPrice": "0.0410",
+        "previousPrice": "0.0500",
         "status": "active"
       },
       {
@@ -1520,12 +1520,12 @@
         "ticker": "KXEOTRUMPTERM-29JAN20-775",
         "marketTitle": "Will the President sign between 750 and 800 Executive Orders between Jan 20, 2025 and Jan 20, 2029?",
         "yesBid": "0.0240",
-        "yesAsk": "0.0400",
+        "yesAsk": "0.0300",
         "lastPrice": "0.0400",
         "volume": "959.00",
-        "volume24h": "5.00",
+        "volume24h": "0.00",
         "openInterest": "844.00",
-        "previousPrice": "0.0240",
+        "previousPrice": "0.0400",
         "status": "active"
       }
     ]
@@ -1559,7 +1559,7 @@
     "kalshiCategory": "Companies",
     "ourCategory": "financials",
     "marketCount": 13,
-    "totalVolume": 39414.23,
+    "totalVolume": 39480.23,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -1568,9 +1568,9 @@
         "yesBid": "0.0900",
         "yesAsk": "0.1000",
         "lastPrice": "0.0900",
-        "volume": "9751.45",
-        "volume24h": "10.92",
-        "openInterest": "4092.97",
+        "volume": "9807.45",
+        "volume24h": "66.92",
+        "openInterest": "4148.97",
         "previousPrice": "0.0900",
         "status": "active"
       },
@@ -1591,9 +1591,9 @@
         "marketTitle": "Will any company announce that it has achieved Artificial General Intelligence (AGI) before Oct 1, 2026?",
         "yesBid": "0.0900",
         "yesAsk": "0.1100",
-        "lastPrice": "0.1000",
-        "volume": "4767.15",
-        "volume24h": "0.00",
+        "lastPrice": "0.0900",
+        "volume": "4777.15",
+        "volume24h": "10.00",
         "openInterest": "3197.15",
         "previousPrice": "0.1000",
         "status": "active"
@@ -1662,12 +1662,12 @@
         "ticker": "KXAGICO-COMP-27Q2",
         "marketTitle": "Will any company announce that it has achieved Artificial General Intelligence (AGI) before Jul 1, 2027?",
         "yesBid": "0.3200",
-        "yesAsk": "0.3300",
+        "yesAsk": "0.3700",
         "lastPrice": "0.3200",
         "volume": "1760.53",
-        "volume24h": "10.77",
+        "volume24h": "0.00",
         "openInterest": "1652.09",
-        "previousPrice": "0.3400",
+        "previousPrice": "0.3200",
         "status": "active"
       },
       {
@@ -1677,9 +1677,9 @@
         "yesAsk": "0.4700",
         "lastPrice": "0.4300",
         "volume": "1287.65",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "1170.65",
-        "previousPrice": "0.3900",
+        "previousPrice": "0.4300",
         "status": "active"
       },
       {
@@ -1748,9 +1748,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "6027.50",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "2770.50",
-        "previousPrice": "0.0510",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -1784,7 +1784,7 @@
         "yesAsk": "0.0190",
         "lastPrice": "0.0100",
         "volume": "2956.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "2200.00",
         "previousPrice": "0.0100",
         "status": "active"
@@ -1796,7 +1796,7 @@
         "yesAsk": "0.0190",
         "lastPrice": "0.0100",
         "volume": "2852.33",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "2720.33",
         "previousPrice": "0.0100",
         "status": "active"
@@ -1808,9 +1808,9 @@
         "yesAsk": "0.0770",
         "lastPrice": "0.0500",
         "volume": "2694.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "1705.00",
-        "previousPrice": "0.0780",
+        "previousPrice": "0.0500",
         "status": "active"
       }
     ]
@@ -1831,9 +1831,9 @@
         "yesAsk": "0.1600",
         "lastPrice": "0.1400",
         "volume": "35615.33",
-        "volume24h": "266.99",
+        "volume24h": "29.62",
         "openInterest": "10362.82",
-        "previousPrice": "0.1700",
+        "previousPrice": "0.1600",
         "status": "active"
       }
     ]
@@ -1844,17 +1844,17 @@
     "kalshiCategory": "Climate and Weather",
     "ourCategory": "climate",
     "marketCount": 4,
-    "totalVolume": 32517.28,
+    "totalVolume": 32518.28,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "EVSHARE-30JAN-30",
         "marketTitle": "EV market share in 2030?",
         "yesBid": "0.3700",
-        "yesAsk": "0.4100",
+        "yesAsk": "0.3800",
         "lastPrice": "0.3700",
         "volume": "12341.28",
-        "volume24h": "1.00",
+        "volume24h": "0.00",
         "openInterest": "3289.56",
         "previousPrice": "0.3700",
         "status": "active"
@@ -1862,31 +1862,31 @@
       {
         "ticker": "EVSHARE-30JAN-20",
         "marketTitle": "EV market share in 2030?",
-        "yesBid": "0.5800",
-        "yesAsk": "0.6300",
+        "yesBid": "0.5900",
+        "yesAsk": "0.6200",
         "lastPrice": "0.5900",
         "volume": "9656.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "3557.00",
-        "previousPrice": "0.6300",
+        "previousPrice": "0.5900",
         "status": "active"
       },
       {
         "ticker": "EVSHARE-30JAN-50",
         "marketTitle": "EV market share in 2030?",
-        "yesBid": "0.2100",
+        "yesBid": "0.2200",
         "yesAsk": "0.2500",
-        "lastPrice": "0.2500",
-        "volume": "8704.00",
-        "volume24h": "0.00",
-        "openInterest": "4084.00",
+        "lastPrice": "0.2100",
+        "volume": "8705.00",
+        "volume24h": "1.00",
+        "openInterest": "4085.00",
         "previousPrice": "0.2500",
         "status": "active"
       },
       {
         "ticker": "EVSHARE-30JAN-10",
         "marketTitle": "EV market share in 2030?",
-        "yesBid": "0.8500",
+        "yesBid": "0.8600",
         "yesAsk": "0.8800",
         "lastPrice": "0.8700",
         "volume": "1816.00",
@@ -1903,7 +1903,7 @@
     "kalshiCategory": "Politics",
     "ourCategory": "politics",
     "marketCount": 6,
-    "totalVolume": 32320.75,
+    "totalVolume": 32422.67,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -1936,9 +1936,9 @@
         "yesBid": "0.1200",
         "yesAsk": "0.1800",
         "lastPrice": "0.1800",
-        "volume": "5399.07",
-        "volume24h": "15.76",
-        "openInterest": "2419.07",
+        "volume": "5500.99",
+        "volume24h": "117.68",
+        "openInterest": "2520.99",
         "previousPrice": "0.1800",
         "status": "active"
       },
@@ -2020,9 +2020,9 @@
         "yesAsk": "0.0500",
         "lastPrice": "0.0400",
         "volume": "3446.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "1467.00",
-        "previousPrice": "0.0660",
+        "previousPrice": "0.0400",
         "status": "active"
       },
       {
@@ -2044,9 +2044,9 @@
         "yesAsk": "0.0300",
         "lastPrice": "0.0200",
         "volume": "2262.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "1107.00",
-        "previousPrice": "0.0400",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -2080,9 +2080,9 @@
         "yesAsk": "0.0360",
         "lastPrice": "0.0400",
         "volume": "428.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "204.00",
-        "previousPrice": "0.0460",
+        "previousPrice": "0.0400",
         "status": "active"
       },
       {
@@ -2092,7 +2092,7 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "375.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "183.00",
         "previousPrice": "0.0200",
         "status": "active"
@@ -2140,9 +2140,9 @@
         "yesAsk": "0.0310",
         "lastPrice": "0.0200",
         "volume": "172.00",
-        "volume24h": "1.00",
+        "volume24h": "0.00",
         "openInterest": "47.00",
-        "previousPrice": "0.0460",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -2165,7 +2165,7 @@
     "kalshiCategory": "Climate and Weather",
     "ourCategory": "climate",
     "marketCount": 1,
-    "totalVolume": 26859.45,
+    "totalVolume": 26880.8,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -2173,10 +2173,10 @@
         "marketTitle": "When will a supervolcano next erupt?",
         "yesBid": "0.1900",
         "yesAsk": "0.2200",
-        "lastPrice": "0.1900",
-        "volume": "26859.45",
-        "volume24h": "2.00",
-        "openInterest": "10402.49",
+        "lastPrice": "0.2280",
+        "volume": "26880.80",
+        "volume24h": "23.35",
+        "openInterest": "10415.49",
         "previousPrice": "0.2180",
         "status": "active"
       }
@@ -2188,18 +2188,18 @@
     "kalshiCategory": "Politics",
     "ourCategory": "politics",
     "marketCount": 1,
-    "totalVolume": 23266.2,
+    "totalVolume": 23280.2,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "AMAZONFTC-29DEC31",
         "marketTitle": "Will a court find that Amazon has illegally maintained a monopoly?",
-        "yesBid": "0.5500",
-        "yesAsk": "0.6100",
+        "yesBid": "0.5400",
+        "yesAsk": "0.5900",
         "lastPrice": "0.5500",
-        "volume": "23266.20",
-        "volume24h": "64.19",
-        "openInterest": "5881.53",
+        "volume": "23280.20",
+        "volume24h": "78.19",
+        "openInterest": "5895.53",
         "previousPrice": "0.5500",
         "status": "active"
       }
@@ -2257,18 +2257,18 @@
     "kalshiCategory": "Climate and Weather",
     "ourCategory": "climate",
     "marketCount": 1,
-    "totalVolume": 20876.22,
+    "totalVolume": 20885.35,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "KXEARTHQUAKEJAPAN-30",
         "marketTitle": "Will there be an at least 8.0 magnitude earthquake in Japan before 2030?",
-        "yesBid": "0.4600",
-        "yesAsk": "0.5300",
-        "lastPrice": "0.4600",
-        "volume": "20876.22",
-        "volume24h": "0.00",
-        "openInterest": "14183.32",
+        "yesBid": "0.4700",
+        "yesAsk": "0.5200",
+        "lastPrice": "0.5300",
+        "volume": "20885.35",
+        "volume24h": "9.13",
+        "openInterest": "14192.45",
         "previousPrice": "0.4600",
         "status": "active"
       }
@@ -2280,18 +2280,18 @@
     "kalshiCategory": "Economics",
     "ourCategory": "economics",
     "marketCount": 1,
-    "totalVolume": 19459.25,
+    "totalVolume": 19463.58,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "KXGDPSHAREMANU-29",
         "marketTitle": "Will Trump bring back manufacturing?",
-        "yesBid": "0.1200",
-        "yesAsk": "0.2060",
-        "lastPrice": "0.2070",
-        "volume": "19459.25",
-        "volume24h": "2.04",
-        "openInterest": "11087.21",
+        "yesBid": "0.1110",
+        "yesAsk": "0.2020",
+        "lastPrice": "0.1110",
+        "volume": "19463.58",
+        "volume24h": "6.37",
+        "openInterest": "11086.21",
         "previousPrice": "0.1200",
         "status": "active"
       }
@@ -2303,7 +2303,7 @@
     "kalshiCategory": "Elections",
     "ourCategory": "politics",
     "marketCount": 1,
-    "totalVolume": 19302.03,
+    "totalVolume": 19303.11,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -2312,10 +2312,10 @@
         "yesBid": "0.0800",
         "yesAsk": "0.0950",
         "lastPrice": "0.0800",
-        "volume": "19302.03",
-        "volume24h": "27.50",
+        "volume": "19303.11",
+        "volume24h": "23.18",
         "openInterest": "9283.94",
-        "previousPrice": "0.0960",
+        "previousPrice": "0.0800",
         "status": "active"
       }
     ]
@@ -2332,7 +2332,7 @@
       {
         "ticker": "KXRAMPBREX-40-BREX",
         "marketTitle": "Will Ramp or Brex IPO first?",
-        "yesBid": "0.0200",
+        "yesBid": "0.0400",
         "yesAsk": "0.0700",
         "lastPrice": "0.0800",
         "volume": "11290.55",
@@ -2431,18 +2431,18 @@
     "kalshiCategory": "Companies",
     "ourCategory": "financials",
     "marketCount": 4,
-    "totalVolume": 13681.15,
+    "totalVolume": 13684.15,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "KXJPMCEONEW-30-ML",
         "marketTitle": "Will Marianne Lake succeed Jamie Dimon as CEO of JPMorgan?",
-        "yesBid": "0.4700",
-        "yesAsk": "0.5300",
-        "lastPrice": "0.5300",
-        "volume": "6772.15",
-        "volume24h": "0.00",
-        "openInterest": "4312.15",
+        "yesBid": "0.4800",
+        "yesAsk": "0.5200",
+        "lastPrice": "0.4700",
+        "volume": "6775.15",
+        "volume24h": "3.00",
+        "openInterest": "4315.15",
         "previousPrice": "0.5300",
         "status": "active"
       },
@@ -2500,7 +2500,7 @@
         "yesAsk": "0.5200",
         "lastPrice": "0.4400",
         "volume": "3130.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "810.00",
         "previousPrice": "0.4400",
         "status": "active"
@@ -2512,9 +2512,9 @@
         "yesAsk": "0.4100",
         "lastPrice": "0.2800",
         "volume": "2872.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "2249.00",
-        "previousPrice": "0.2800",
+        "previousPrice": "0.3400",
         "status": "active"
       },
       {
@@ -2524,9 +2524,9 @@
         "yesAsk": "0.2700",
         "lastPrice": "0.2300",
         "volume": "1475.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "1125.00",
-        "previousPrice": "0.2700",
+        "previousPrice": "0.2300",
         "status": "active"
       },
       {
@@ -2536,9 +2536,9 @@
         "yesAsk": "0.9600",
         "lastPrice": "0.8800",
         "volume": "1372.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "228.00",
-        "previousPrice": "0.9600",
+        "previousPrice": "0.8800",
         "status": "active"
       },
       {
@@ -2548,9 +2548,9 @@
         "yesAsk": "0.2100",
         "lastPrice": "0.1400",
         "volume": "1056.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "594.00",
-        "previousPrice": "0.2200",
+        "previousPrice": "0.1400",
         "status": "active"
       },
       {
@@ -2560,9 +2560,9 @@
         "yesAsk": "0.1800",
         "lastPrice": "0.1000",
         "volume": "837.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "434.00",
-        "previousPrice": "0.1800",
+        "previousPrice": "0.1000",
         "status": "active"
       },
       {
@@ -2572,7 +2572,7 @@
         "yesAsk": "0.6600",
         "lastPrice": "0.5800",
         "volume": "745.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "258.00",
         "previousPrice": "0.5800",
         "status": "active"
@@ -2584,33 +2584,33 @@
         "yesAsk": "0.8500",
         "lastPrice": "0.7800",
         "volume": "623.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "239.00",
-        "previousPrice": "0.8500",
+        "previousPrice": "0.7800",
         "status": "active"
       },
       {
         "ticker": "KXU3MAX-30-20",
         "marketTitle": "How high will unemployment get before 2030?",
         "yesBid": "0.0300",
-        "yesAsk": "0.1000",
+        "yesAsk": "0.1100",
         "lastPrice": "0.0400",
         "volume": "574.00",
-        "volume24h": "2.00",
+        "volume24h": "0.00",
         "openInterest": "167.00",
-        "previousPrice": "0.1300",
+        "previousPrice": "0.0400",
         "status": "active"
       },
       {
         "ticker": "KXU3MAX-30-7",
         "marketTitle": "How high will unemployment get before 2030?",
-        "yesBid": "0.6600",
-        "yesAsk": "0.7400",
+        "yesBid": "0.6700",
+        "yesAsk": "0.7300",
         "lastPrice": "0.6600",
         "volume": "507.00",
-        "volume24h": "3.00",
+        "volume24h": "1.00",
         "openInterest": "149.00",
-        "previousPrice": "0.7400",
+        "previousPrice": "0.6600",
         "status": "active"
       }
     ]
@@ -2621,17 +2621,17 @@
     "kalshiCategory": "Climate and Weather",
     "ourCategory": "climate",
     "marketCount": 1,
-    "totalVolume": 12092.84,
+    "totalVolume": 12104.84,
     "isMutuallyExclusive": false,
     "markets": [
       {
         "ticker": "KXWARMING-50",
         "marketTitle": "Will the world pass 2 degrees Celsius over pre-industrial levels before 2050?",
         "yesBid": "0.7700",
-        "yesAsk": "0.7900",
-        "lastPrice": "0.7700",
-        "volume": "12092.84",
-        "volume24h": "13.00",
+        "yesAsk": "0.8000",
+        "lastPrice": "0.7900",
+        "volume": "12104.84",
+        "volume24h": "24.00",
         "openInterest": "5045.99",
         "previousPrice": "0.7700",
         "status": "active"
@@ -2654,9 +2654,9 @@
         "yesAsk": "0.8500",
         "lastPrice": "0.8500",
         "volume": "11863.00",
-        "volume24h": "1.00",
+        "volume24h": "0.00",
         "openInterest": "5719.00",
-        "previousPrice": "0.8400",
+        "previousPrice": "0.8500",
         "status": "active"
       }
     ]
@@ -2677,7 +2677,7 @@
         "yesAsk": "0.1000",
         "lastPrice": "0.1000",
         "volume": "4742.00",
-        "volume24h": "100.00",
+        "volume24h": "50.00",
         "openInterest": "3372.00",
         "previousPrice": "0.1000",
         "status": "active"
@@ -2689,9 +2689,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "1603.06",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "1528.06",
-        "previousPrice": "0.0580",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
@@ -2733,7 +2733,7 @@
       {
         "ticker": "KXAFRICALEADEROUT-35-EM",
         "marketTitle": "Will Emmerson Mnangagwa leave office next in this set?",
-        "yesBid": "0.1400",
+        "yesBid": "0.1500",
         "yesAsk": "0.2000",
         "lastPrice": "0.1500",
         "volume": "862.00",
@@ -2817,7 +2817,7 @@
         "ticker": "KXEUEXITCOUNTRY-30-ITA",
         "marketTitle": "Will Italy vote to leave the EU before 2030?",
         "yesBid": "0.0400",
-        "yesAsk": "0.0760",
+        "yesAsk": "0.0770",
         "lastPrice": "0.0400",
         "volume": "3623.00",
         "volume24h": "104.00",
@@ -2829,7 +2829,7 @@
         "ticker": "KXEUEXITCOUNTRY-30-POL",
         "marketTitle": "Will Poland vote to leave the EU before 2030?",
         "yesBid": "0.0140",
-        "yesAsk": "0.0250",
+        "yesAsk": "0.0260",
         "lastPrice": "0.0250",
         "volume": "2128.00",
         "volume24h": "0.00",
@@ -2841,7 +2841,7 @@
         "ticker": "KXEUEXITCOUNTRY-30-SPA",
         "marketTitle": "Will Spain vote to leave the EU before 2030?",
         "yesBid": "0.0100",
-        "yesAsk": "0.0580",
+        "yesAsk": "0.0590",
         "lastPrice": "0.0600",
         "volume": "1116.00",
         "volume24h": "0.00",
@@ -2853,7 +2853,7 @@
         "ticker": "KXEUEXITCOUNTRY-30-FRA",
         "marketTitle": "Will France vote to leave the EU before 2030?",
         "yesBid": "0.0100",
-        "yesAsk": "0.0560",
+        "yesAsk": "0.0570",
         "lastPrice": "0.0300",
         "volume": "323.00",
         "volume24h": "0.00",
@@ -2865,7 +2865,7 @@
         "ticker": "KXEUEXITCOUNTRY-30-GER",
         "marketTitle": "Will Germany vote to leave the EU before 2030?",
         "yesBid": "0.0100",
-        "yesAsk": "0.0560",
+        "yesAsk": "0.0570",
         "lastPrice": "0.0300",
         "volume": "235.00",
         "volume24h": "0.00",
@@ -2910,13 +2910,13 @@
       {
         "ticker": "KXUSTAKEOVER-30",
         "marketTitle": "Will the US government take control of any AI company or project before 2030?",
-        "yesBid": "0.3500",
-        "yesAsk": "0.4000",
+        "yesBid": "0.3400",
+        "yesAsk": "0.4300",
         "lastPrice": "0.4300",
         "volume": "6811.78",
-        "volume24h": "35.32",
+        "volume24h": "0.00",
         "openInterest": "3768.78",
-        "previousPrice": "0.3400",
+        "previousPrice": "0.4300",
         "status": "active"
       }
     ]
@@ -2984,16 +2984,16 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "1379.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "121.00",
-        "previousPrice": "0.0120",
+        "previousPrice": "0.0200",
         "status": "active"
       },
       {
         "ticker": "KXEUREF-30-FRA",
         "marketTitle": "Will France hold a referendum on leaving the EU?",
         "yesBid": "0.0160",
-        "yesAsk": "0.0660",
+        "yesAsk": "0.0670",
         "lastPrice": "0.0750",
         "volume": "1259.56",
         "volume24h": "0.00",
@@ -3008,9 +3008,9 @@
         "yesAsk": "0.0200",
         "lastPrice": "0.0200",
         "volume": "1187.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "212.00",
-        "previousPrice": "0.0100",
+        "previousPrice": "0.0200",
         "status": "active"
       }
     ]
@@ -3043,15 +3043,15 @@
         "yesAsk": "0.7100",
         "lastPrice": "0.6300",
         "volume": "882.00",
-        "volume24h": "3.00",
+        "volume24h": "0.00",
         "openInterest": "323.00",
-        "previousPrice": "0.5700",
+        "previousPrice": "0.6300",
         "status": "active"
       },
       {
         "ticker": "KXFYREFESTPRICE-30-1750",
         "marketTitle": "How much will a Fyre Festival 2 General Admission Ticket cost?",
-        "yesBid": "0.4000",
+        "yesBid": "0.4800",
         "yesAsk": "0.5500",
         "lastPrice": "0.4800",
         "volume": "319.00",
@@ -3162,9 +3162,9 @@
         "yesAsk": "0.4700",
         "lastPrice": "0.4200",
         "volume": "2986.70",
-        "volume24h": "0.70",
+        "volume24h": "0.00",
         "openInterest": "1026.70",
-        "previousPrice": "0.4700",
+        "previousPrice": "0.4200",
         "status": "active"
       }
     ]
@@ -3280,7 +3280,7 @@
     "kalshiCategory": "Elections",
     "ourCategory": "politics",
     "marketCount": 4,
-    "totalVolume": 1348,
+    "totalVolume": 1350,
     "isMutuallyExclusive": false,
     "markets": [
       {
@@ -3290,7 +3290,7 @@
         "yesAsk": "0.1100",
         "lastPrice": "0.1100",
         "volume": "544.00",
-        "volume24h": "56.00",
+        "volume24h": "0.00",
         "openInterest": "30.00",
         "previousPrice": "0.1100",
         "status": "active"
@@ -3314,19 +3314,19 @@
         "yesAsk": "0.2100",
         "lastPrice": "0.2000",
         "volume": "240.00",
-        "volume24h": "66.00",
+        "volume24h": "44.00",
         "openInterest": "83.00",
-        "previousPrice": "0.1000",
+        "previousPrice": "0.1600",
         "status": "active"
       },
       {
         "ticker": "KXECCOMPACT-30-28",
         "marketTitle": "Will the National Popular Vote Interstate Compact reach 270 electoral votes before 2028?",
-        "yesBid": "0.0800",
-        "yesAsk": "0.0900",
+        "yesBid": "0.0900",
+        "yesAsk": "0.1200",
         "lastPrice": "0.0900",
-        "volume": "229.00",
-        "volume24h": "56.00",
+        "volume": "231.00",
+        "volume24h": "58.00",
         "openInterest": "92.00",
         "previousPrice": "0.0500",
         "status": "active"

@@ -6,8 +6,7 @@
 import { z } from 'zod/v4';
 
 // Market Category
-export const MarketCategorySchema = z.enum(['economics', 'politics', 'climate', 'financials']);
-export type MarketCategory = z.infer<typeof MarketCategorySchema>
+export type MarketCategory = string
 
 // Trend Direction
 export const TrendDirectionSchema = z.enum(['up', 'down', 'stable']);

@@ -1,0 +1,50 @@
+.insight {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.sectionHeader {
+  margin: 10px 0 4px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.sectionHeader:first-child {
+  margin-top: 0;
+}
+
+.bullet {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 2px 0;
+  padding-left: 4px;
+}
+
+.bulletDot {
+  flex-shrink: 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.bulletText {
+  flex: 1;
+}
+
+.paragraph {
+  margin: 4px 0;
+}
+
+.link {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -8,7 +8,7 @@ const CREATE_TABLES = `
     id SERIAL PRIMARY KEY,
     event_ticker VARCHAR(255) UNIQUE NOT NULL,
     title VARCHAR(500) NOT NULL,
-    category VARCHAR(50) NOT NULL CHECK (category IN ('economics', 'politics', 'financials', 'climate')),
+    category VARCHAR(50) NOT NULL,
     total_volume NUMERIC NOT NULL DEFAULT 0,
     is_mutually_exclusive BOOLEAN NOT NULL DEFAULT FALSE,
     market_count INTEGER NOT NULL DEFAULT 0,

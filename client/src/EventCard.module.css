@@ -4,6 +4,22 @@
   padding: 16px;
   margin-bottom: 12px;
   background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.card:hover {
+  border-color: #9ca3af;
+}
+
+.cardContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cardLeft {
+  flex: 1;
 }
 
 .title {
@@ -43,4 +59,29 @@
   font-size: 14px;
   color: #4b5563;
   line-height: 1.5;
+}
+
+.generateBtn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.generateBtn:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.generateBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

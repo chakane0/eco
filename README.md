@@ -498,3 +498,5 @@ Log error, stop pagination. Use data fetched so far. 300ms delay between API cal
 - **Database**: Events table stays small (hundreds of rows). Markets table larger but indexed by event_ticker FK.
 - **Frontend**: Auto-refresh every 5 minutes. No WebSocket overhead.
 - **Email**: Weekly batch to subscribers. Use batch sending if service supports it.
+
+

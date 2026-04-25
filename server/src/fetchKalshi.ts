@@ -1,12 +1,14 @@
 // ABOUTME: Fetches active events and markets from Kalshi's public API.
-// ABOUTME: Stores events with total volume and markets as children, using Kalshi's category system.
+// ABOUTME: Syncs top 5 events by volume per category, using prior volume data to prioritize.
 
 import { query } from './db.js'
 import { mapKalshiCategory } from './categorizeKalshi.js'
 import type { MarketCategory, KalshiEvent } from './types.js'
 
 const KALSHI_API_BASE = 'https://api.elections.kalshi.com/trade-api/v2'
-const MAX_EVENT_PAGES = 5
+const MAX_EVENT_PAGES = 50
+const EVENTS_PER_CATEGORY = 5
+const MAX_RETRIES = 3
 
 interface KalshiApiEvent {
   event_ticker: string
@@ -19,6 +21,8 @@ interface KalshiApiMarket {
   ticker: string
   title: string
   yes_bid_dollars: string
+  yes_ask_dollars: string
+  last_price_dollars: string
   volume_fp: string
   previous_price_dollars: string
   status: string
@@ -45,7 +49,7 @@ async function fetchMatchingEvents(): Promise<KalshiApiEvent[]> {
   for (let page = 0; page < MAX_EVENT_PAGES; page++) {
     const url = new URL(`${KALSHI_API_BASE}/events`)
     url.searchParams.set('status', 'open')
-    url.searchParams.set('limit', '200')
+    url.searchParams.set('limit', '100')
     if (cursor) url.searchParams.set('cursor', cursor)
 
     const response = await fetch(url.toString())
@@ -56,16 +60,13 @@ async function fetchMatchingEvents(): Promise<KalshiApiEvent[]> {
     const data = (await response.json()) as KalshiEventsResponse
 
     for (const event of data.events) {
-      const category = mapKalshiCategory(event.category)
-      if (category) {
-        matched.push(event)
-      }
+      matched.push(event)
     }
 
     console.log(`Fetched events page ${page + 1}, ${matched.length} matching events so far`)
     cursor = data.cursor
     if (!cursor) break
-    await delay(300)
+    await delay(200)
   }
 
   return matched
@@ -75,15 +76,73 @@ async function fetchMarketsForEvent(eventTicker: string): Promise<KalshiApiMarke
   const url = new URL(`${KALSHI_API_BASE}/markets`)
   url.searchParams.set('event_ticker', eventTicker)
   url.searchParams.set('status', 'open')
-  url.searchParams.set('limit', '50')
+  url.searchParams.set('limit', '100')
 
-  const response = await fetch(url.toString())
-  if (!response.ok) {
-    throw new Error(`Kalshi markets API returned ${response.status}: ${response.statusText}`)
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    const response = await fetch(url.toString())
+
+    if (response.status === 429) {
+      const backoff = Math.pow(2, attempt) * 1000
+      console.warn(`Rate limited fetching ${eventTicker}, retrying in ${backoff}ms...`)
+      await delay(backoff)
+      continue
+    }
+
+    if (!response.ok) {
+      throw new Error(`Kalshi markets API returned ${response.status}: ${response.statusText}`)
+    }
+
+    const data = (await response.json()) as KalshiMarketsResponse
+    return data.markets
   }
 
-  const data = (await response.json()) as KalshiMarketsResponse
-  return data.markets
+  throw new Error(`Kalshi markets API rate limited after ${MAX_RETRIES} retries for ${eventTicker}`)
+}
+
+async function getKnownVolumes(eventTickers: string[]): Promise<Map<string, number>> {
+  if (eventTickers.length === 0) return new Map()
+
+  const placeholders = eventTickers.map((_, i) => `$${i + 1}`).join(', ')
+  const result = await query<{ event_ticker: string; total_volume: string }>(
+    `SELECT event_ticker, total_volume FROM events WHERE event_ticker IN (${placeholders})`,
+    eventTickers
+  )
+
+  const volumes = new Map<string, number>()
+  for (const row of result.rows) {
+    volumes.set(row.event_ticker, parseFloat(row.total_volume))
+  }
+  return volumes
+}
+
+function selectTopPerCategory(
+  apiEvents: KalshiApiEvent[],
+  knownVolumes: Map<string, number>,
+): KalshiApiEvent[] {
+  const byCategory = new Map<MarketCategory, KalshiApiEvent[]>()
+
+  for (const event of apiEvents) {
+    const category = mapKalshiCategory(event.category)
+    const list = byCategory.get(category) ?? []
+    list.push(event)
+    byCategory.set(category, list)
+  }
+
+  const selected: KalshiApiEvent[] = []
+
+  for (const [category, events] of byCategory) {
+    events.sort((a, b) => {
+      const volA = knownVolumes.get(a.event_ticker) ?? 0
+      const volB = knownVolumes.get(b.event_ticker) ?? 0
+      return volB - volA
+    })
+
+    const top = events.slice(0, EVENTS_PER_CATEGORY)
+    selected.push(...top)
+    console.log(`Category "${category}": ${events.length} events, syncing top ${top.length}`)
+  }
+
+  return selected
 }
 
 async function upsertEvent(
@@ -129,11 +188,18 @@ async function upsertMarket(
 
 export async function fetchAndSyncMarkets(): Promise<KalshiEvent[]> {
   const apiEvents = await fetchMatchingEvents()
+
+  const allTickers = apiEvents.map(e => e.event_ticker)
+  const knownVolumes = await getKnownVolumes(allTickers)
+  const selected = selectTopPerCategory(apiEvents, knownVolumes)
+
+  console.log(`Syncing ${selected.length} events (top ${EVENTS_PER_CATEGORY} per category)`)
+
   const syncedEvents: KalshiEvent[] = []
 
-  for (const apiEvent of apiEvents) {
+  for (const apiEvent of selected) {
     try {
-      const category = mapKalshiCategory(apiEvent.category)!
+      const category = mapKalshiCategory(apiEvent.category)
       const markets = await fetchMarketsForEvent(apiEvent.event_ticker)
 
       // Insert event first (with 0 volume) so markets can reference it
@@ -149,7 +215,7 @@ export async function fetchAndSyncMarkets(): Promise<KalshiEvent[]> {
       let totalVolume = 0
 
       for (const market of markets) {
-        const price = Math.max(0, Math.min(1, parseFloat(market.yes_bid_dollars) || 0))
+        const price = Math.max(0, Math.min(1, parseFloat(market.last_price_dollars) || 0))
         const volume = Math.max(0, parseFloat(market.volume_fp) || 0)
         const title = (market.title ?? '').slice(0, 500)
 
@@ -184,7 +250,7 @@ export async function fetchAndSyncMarkets(): Promise<KalshiEvent[]> {
         lastUpdated: new Date(),
       })
 
-      await delay(200)
+      await delay(500)
     } catch (err) {
       console.warn(`Skipping event ${apiEvent.event_ticker}:`, err)
     }

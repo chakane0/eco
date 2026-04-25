@@ -11,7 +11,7 @@ import { createTables } from './schema.js';
 
 import cron from 'node-cron';
 import { fetchAndSyncMarkets } from './fetchKalshi.js';
-import { generateTopMarketInsights } from './insights.js';
+import { generateTopEventInsights } from './insights.js';
 import { buildAndSendDigest } from './emailJob.js';
 
 const app = express();
@@ -63,7 +63,7 @@ async function start() {
     // generate insights every 12 hours
     cron.schedule('0 */12 * * *', async () => {
         try {
-            await generateTopMarketInsights(20);
+            await generateTopEventInsights(20);
         } catch(err) {
             console.error('Insight generation failed:', err);
         }

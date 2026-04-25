@@ -4,7 +4,7 @@
 */
 
 import { query } from './db.js';
-import { generateInsight } from './insights.js';
+import { generateEventInsight } from './insights.js';
 import type { MarketSnapshot, SendResult } from './types.js';
 
 interface DigestInsight {
